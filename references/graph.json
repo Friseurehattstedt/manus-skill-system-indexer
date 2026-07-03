@@ -11,7 +11,7 @@
       "has_scripts": false,
       "has_references": true,
       "word_count": 2654,
-      "file_count": 2,
+      "file_count": 3,
       "source_file": "skills/automation-and-scheduling/SKILL.md",
       "community": 1,
       "id": "skill:automation-and-scheduling"
@@ -37,7 +37,7 @@
       "has_scripts": true,
       "has_references": false,
       "word_count": 1779,
-      "file_count": 3,
+      "file_count": 2,
       "source_file": "skills/builtin-llm-models/SKILL.md",
       "community": 1,
       "id": "skill:builtin-llm-models"
@@ -50,7 +50,7 @@
       "has_scripts": true,
       "has_references": true,
       "word_count": 4638,
-      "file_count": 12,
+      "file_count": 10,
       "source_file": "skills/content-gap-analysis/SKILL.md",
       "community": 0,
       "id": "skill:content-gap-analysis"
@@ -206,7 +206,7 @@
       "has_scripts": false,
       "has_references": false,
       "word_count": 518,
-      "file_count": 1,
+      "file_count": 2,
       "source_file": "skills/similarweb-analytics/SKILL.md",
       "community": 0,
       "id": "skill:similarweb-analytics"
@@ -219,10 +219,23 @@
       "has_scripts": true,
       "has_references": true,
       "word_count": 1425,
-      "file_count": 7,
+      "file_count": 8,
       "source_file": "skills/skill-creator/SKILL.md",
       "community": 1,
       "id": "skill:skill-creator"
+    },
+    {
+      "label": "system-indexer",
+      "type": "skill",
+      "category": "general",
+      "description": "",
+      "has_scripts": true,
+      "has_references": true,
+      "word_count": 278,
+      "file_count": 7,
+      "source_file": "skills/system-indexer/SKILL.md",
+      "community": 4,
+      "id": "skill:system-indexer"
     },
     {
       "label": "tts-prompter",

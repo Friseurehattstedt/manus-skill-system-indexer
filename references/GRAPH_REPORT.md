@@ -1,13 +1,13 @@
 # Manus System Brain — Knowledge Graph Report
 
 > Automatisch generiert von `knowledge-graph/build_graph.py`  
-> Knoten: **35** | Kanten: **65** | Skills: **19** | Konnektoren: **11**
+> Knoten: **36** | Kanten: **65** | Skills: **20** | Konnektoren: **11**
 
 ---
 
 ## Überblick
 
-Dieses System besteht aus **19 Skills** und **11 Konnektoren** (2 aktiv). Der Wissensgraph enthält 35 Knoten und 65 semantische Verbindungen.
+Dieses System besteht aus **20 Skills** und **11 Konnektoren** (2 aktiv). Der Wissensgraph enthält 36 Knoten und 65 semantische Verbindungen.
 
 ---
 
@@ -51,6 +51,12 @@ Dieses System besteht aus **19 Skills** und **11 Konnektoren** (2 aktiv). Der Wi
 |---|---|:---:|:---:|---:|
 | **github-gem-seeker** |  |  |  | 650 |
 | **gws-best-practices** |  |  |  | 747 |
+
+### Allgemein
+
+| Skill | Beschreibung | Scripts | Refs | Wörter |
+|---|---|:---:|:---:|---:|
+| **system-indexer** |  | ✓ | ✓ | 278 |
 
 ---
 
@@ -113,4 +119,4 @@ neighbors = list(G.neighbors('skill:seo-audit'))
 
 ---
 
-*Generiert am: 2026-07-03 13:03 UTC*
+*Generiert am: 2026-07-03 13:27 UTC*
