@@ -330,6 +330,127 @@
       "id": "project:salon-os"
     },
     {
+      "label": "brandkit",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-design",
+      "description": "",
+      "project": "salon-os",
+      "source_file": "projects/salon-os/skills/brandkit/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-os:brandkit"
+    },
+    {
+      "label": "emil-design-eng",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-design",
+      "description": "",
+      "project": "salon-os",
+      "source_file": "projects/salon-os/skills/emil-design-eng/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-os:emil-design-eng"
+    },
+    {
+      "label": "extract-design-system",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-design",
+      "description": "",
+      "project": "salon-os",
+      "source_file": "projects/salon-os/skills/extract-design-system/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-os:extract-design-system"
+    },
+    {
+      "label": "image-to-code",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-design",
+      "description": "",
+      "project": "salon-os",
+      "source_file": "projects/salon-os/skills/image-to-code/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-os:image-to-code"
+    },
+    {
+      "label": "review-animations",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-design",
+      "description": "",
+      "project": "salon-os",
+      "source_file": "projects/salon-os/skills/review-animations/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-os:review-animations"
+    },
+    {
+      "label": "ui-ux-pro-max",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-design",
+      "description": "",
+      "project": "salon-os",
+      "source_file": "projects/salon-os/skills/ui-ux-pro-max/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-os:ui-ux-pro-max"
+    },
+    {
+      "label": "brand",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-design",
+      "description": "",
+      "project": "salon-os",
+      "source_file": "projects/salon-os/skills/uiux-brand/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-os:uiux-brand"
+    },
+    {
+      "label": "design",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-design",
+      "description": "",
+      "project": "salon-os",
+      "source_file": "projects/salon-os/skills/uiux-design/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-os:uiux-design"
+    },
+    {
+      "label": "design-system",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-design",
+      "description": "",
+      "project": "salon-os",
+      "source_file": "projects/salon-os/skills/uiux-design-system/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-os:uiux-design-system"
+    },
+    {
+      "label": "ui-styling",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-design",
+      "description": "",
+      "project": "salon-os",
+      "source_file": "projects/salon-os/skills/uiux-ui-styling/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-os:uiux-ui-styling"
+    },
+    {
+      "label": "web-design-guidelines",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-design",
+      "description": "",
+      "project": "salon-os",
+      "source_file": "projects/salon-os/skills/web-design-guidelines/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-os:web-design-guidelines"
+    },
+    {
       "label": "Ahrefs",
       "type": "connector",
       "layer": "connector",
@@ -870,6 +991,72 @@
       "confidence": "EXTRACTED",
       "source": "skill:website-traffic-checker",
       "target": "connector:similarweb"
+    },
+    {
+      "relation": "USES",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-os",
+      "target": "skill:salon-os:brandkit"
+    },
+    {
+      "relation": "USES",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-os",
+      "target": "skill:salon-os:emil-design-eng"
+    },
+    {
+      "relation": "USES",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-os",
+      "target": "skill:salon-os:extract-design-system"
+    },
+    {
+      "relation": "USES",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-os",
+      "target": "skill:salon-os:image-to-code"
+    },
+    {
+      "relation": "USES",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-os",
+      "target": "skill:salon-os:review-animations"
+    },
+    {
+      "relation": "USES",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-os",
+      "target": "skill:salon-os:ui-ux-pro-max"
+    },
+    {
+      "relation": "USES",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-os",
+      "target": "skill:salon-os:uiux-brand"
+    },
+    {
+      "relation": "USES",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-os",
+      "target": "skill:salon-os:uiux-design"
+    },
+    {
+      "relation": "USES",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-os",
+      "target": "skill:salon-os:uiux-design-system"
+    },
+    {
+      "relation": "USES",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-os",
+      "target": "skill:salon-os:uiux-ui-styling"
+    },
+    {
+      "relation": "USES",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-os",
+      "target": "skill:salon-os:web-design-guidelines"
     }
   ]
 }

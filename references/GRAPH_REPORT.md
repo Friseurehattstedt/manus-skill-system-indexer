@@ -2,7 +2,7 @@
 
 > **Für jeden KI-Agenten:** Lies zuerst `SYSTEM.md` um den Systemgedanken zu verstehen. Dieser Bericht ist der operative Überblick.
 
-> Generiert: 2026-07-03 15:19 | Knoten: **38** | Kanten: **72** | Manus-Skills: **20** | Projekt-Skills: **0** | Projekte: **1** | Konnektoren: **12**
+> Generiert: 2026-07-03 15:47 | Knoten: **49** | Kanten: **83** | Manus-Skills: **20** | Projekt-Skills: **11** | Projekte: **1** | Konnektoren: **12**
 
 ---
 
@@ -15,7 +15,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | **Kern** | Manus System Brain (dieses Repo) | 1 |
 | **Universelle Skills** | Plattformübergreifende Fähigkeiten | 20 |
 | **Projekte** | Spezifische Anwendungen (z.B. Salon-Website) | 1 |
-| **Projekt-Skills** | Projektspezifische Fähigkeiten | 0 |
+| **Projekt-Skills** | Projektspezifische Fähigkeiten | 11 |
 | **Konnektoren** | Externe APIs und Integrationen | 12 (2 aktiv) |
 
 ---
@@ -70,6 +70,20 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 
 **Repo:** `Friseurehattstedt/salon-os` | **Beschreibung:** **GitHub-Repo:** `Friseurehattstedt/salon-os` (privat)
 
+**Projekt-spezifische Skills:**
+
+- **brandkit** — 
+- **emil-design-eng** — 
+- **extract-design-system** — 
+- **image-to-code** — 
+- **review-animations** — 
+- **ui-ux-pro-max** — 
+- **brand** — 
+- **design** — 
+- **design-system** — 
+- **ui-styling** — 
+- **web-design-guidelines** — 
+
 **Nutzt universelle Skills:** seo-audit, content-gap-analysis, keyword-research, website-traffic-checker, backlink-analysis, imagegen, automation-and-scheduling
 
 ---
@@ -78,10 +92,10 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 
 | Rang | Knoten | Typ | Ebene | Verbindungen |
 |:---:|---|---|---|:---:|
-| 1 | **website-traffic-checker** | skill | manus | 10 |
-| 2 | **System & Infrastruktur** | category | manus | 9 |
-| 3 | **SEO & Marketing** | category | manus | 8 |
-| 4 | **Salon OS — Die Friseure Gumbert & Partner** | project | unternehmens-os | 8 |
+| 1 | **Salon OS — Die Friseure Gumbert & Partner** | project | unternehmens-os | 19 |
+| 2 | **website-traffic-checker** | skill | manus | 10 |
+| 3 | **System & Infrastruktur** | category | manus | 9 |
+| 4 | **SEO & Marketing** | category | manus | 8 |
 | 5 | **automation-and-scheduling** | skill | manus | 7 |
 | 6 | **keyword-research** | skill | manus | 7 |
 | 7 | **manus-api** | skill | manus | 7 |
