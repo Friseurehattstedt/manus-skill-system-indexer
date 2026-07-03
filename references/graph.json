@@ -7,7 +7,7 @@
       "label": "Manus System Brain",
       "type": "system",
       "layer": "core",
-      "description": "Zentrales KI-Betriebssystem. Enthält den Wissensgraphen, universelle Skills und Projekt-Referenzen.",
+      "description": "EBENE 0: Intelligence Layer. Koordiniert alle Unternehmens-OS und Satelliten.",
       "repo": "Friseurehattstedt/manus-system-brain",
       "community": 0,
       "id": "system:brain"
@@ -321,96 +321,13 @@
       "id": "skill:website-traffic-checker"
     },
     {
-      "label": "Salon Astro Website",
+      "label": "Salon OS — Die Friseure Gumbert & Partner",
       "type": "project",
-      "layer": "project",
-      "description": "**Repo:** `Friseurehattstedt/salon-astro-website` (private)",
-      "repo": "Friseurehattstedt/salon-astro-website",
+      "layer": "unternehmens-os",
+      "description": "**GitHub-Repo:** `Friseurehattstedt/salon-os` (privat)",
+      "repo": "Friseurehattstedt/salon-os",
       "community": 5,
-      "id": "project:salon-astro-website"
-    },
-    {
-      "label": "Salon Website",
-      "type": "project",
-      "layer": "project",
-      "description": "**Repo:** `Friseurehattstedt/salon-astro-website` (privat)",
-      "repo": "Friseurehattstedt/salon-astro-website",
-      "community": 5,
-      "id": "project:salon-website"
-    },
-    {
-      "label": "content-production",
-      "type": "skill",
-      "layer": "project",
-      "category": "salon-content",
-      "description": "",
-      "project": "salon-website",
-      "source_file": "projects/salon-website/skills/content-production/SKILL.md",
-      "community": 5,
-      "id": "skill:salon-website:content-production"
-    },
-    {
-      "label": "pr-review-expert",
-      "type": "skill",
-      "layer": "project",
-      "category": "salon-dev",
-      "description": "",
-      "project": "salon-website",
-      "source_file": "projects/salon-website/skills/pr-review-expert/SKILL.md",
-      "community": 5,
-      "id": "skill:salon-website:pr-review-expert"
-    },
-    {
-      "label": "programmatic-seo",
-      "type": "skill",
-      "layer": "project",
-      "category": "salon-seo",
-      "description": "",
-      "project": "salon-website",
-      "source_file": "projects/salon-website/skills/programmatic-seo/SKILL.md",
-      "community": 5,
-      "id": "skill:salon-website:programmatic-seo"
-    },
-    {
-      "label": "schema-markup",
-      "type": "skill",
-      "layer": "project",
-      "category": "salon-seo",
-      "description": "",
-      "project": "salon-website",
-      "source_file": "projects/salon-website/skills/schema-markup/SKILL.md",
-      "community": 5,
-      "id": "skill:salon-website:schema-markup"
-    },
-    {
-      "label": "social-content",
-      "type": "skill",
-      "layer": "project",
-      "category": "salon-content",
-      "description": "",
-      "project": "salon-website",
-      "source_file": "projects/salon-website/skills/social-content/SKILL.md",
-      "community": 5,
-      "id": "skill:salon-website:social-content"
-    },
-    {
-      "label": "social-media-manager",
-      "type": "skill",
-      "layer": "project",
-      "category": "salon-content",
-      "description": "",
-      "project": "salon-website",
-      "source_file": "projects/salon-website/skills/social-media-manager/SKILL.md",
-      "community": 5,
-      "id": "skill:salon-website:social-media-manager"
-    },
-    {
-      "label": "Wissen: salon-website",
-      "type": "knowledge",
-      "layer": "project",
-      "file_count": 14,
-      "community": 5,
-      "id": "knowledge:salon-website"
+      "id": "project:salon-os"
     },
     {
       "label": "Ahrefs",
@@ -547,16 +464,10 @@
       "target": "category:manus-integration"
     },
     {
-      "relation": "MANAGES",
+      "relation": "COORDINATES",
       "confidence": "EXTRACTED",
       "source": "system:brain",
-      "target": "project:salon-astro-website"
-    },
-    {
-      "relation": "MANAGES",
-      "confidence": "EXTRACTED",
-      "source": "system:brain",
-      "target": "project:salon-website"
+      "target": "project:salon-os"
     },
     {
       "relation": "CONTAINS",
@@ -682,7 +593,7 @@
       "relation": "USES",
       "confidence": "INFERRED",
       "source": "skill:automation-and-scheduling",
-      "target": "project:salon-website"
+      "target": "project:salon-os"
     },
     {
       "relation": "COMPLEMENTS",
@@ -718,7 +629,7 @@
       "relation": "USES",
       "confidence": "INFERRED",
       "source": "skill:backlink-analysis",
-      "target": "project:salon-website"
+      "target": "project:salon-os"
     },
     {
       "relation": "COMPLEMENTS",
@@ -760,7 +671,7 @@
       "relation": "USES",
       "confidence": "INFERRED",
       "source": "skill:content-gap-analysis",
-      "target": "project:salon-website"
+      "target": "project:salon-os"
     },
     {
       "relation": "COMPLEMENTS",
@@ -802,7 +713,7 @@
       "relation": "USES",
       "confidence": "INFERRED",
       "source": "skill:imagegen",
-      "target": "project:salon-website"
+      "target": "project:salon-os"
     },
     {
       "relation": "COMPLEMENTS",
@@ -820,25 +731,13 @@
       "relation": "USES",
       "confidence": "INFERRED",
       "source": "skill:keyword-research",
-      "target": "project:salon-website"
+      "target": "project:salon-os"
     },
     {
       "relation": "COMPLEMENTS",
       "confidence": "INFERRED",
       "source": "skill:keyword-research",
       "target": "skill:website-traffic-checker"
-    },
-    {
-      "relation": "COMPLEMENTS",
-      "confidence": "INFERRED",
-      "source": "skill:keyword-research",
-      "target": "skill:salon-website:content-production"
-    },
-    {
-      "relation": "COMPLEMENTS",
-      "confidence": "INFERRED",
-      "source": "skill:keyword-research",
-      "target": "skill:salon-website:programmatic-seo"
     },
     {
       "relation": "USED_BY",
@@ -898,7 +797,7 @@
       "relation": "USES",
       "confidence": "INFERRED",
       "source": "skill:seo-audit",
-      "target": "project:salon-website"
+      "target": "project:salon-os"
     },
     {
       "relation": "COMPLEMENTS",
@@ -911,18 +810,6 @@
       "confidence": "INFERRED",
       "source": "skill:seo-audit",
       "target": "skill:website-traffic-checker"
-    },
-    {
-      "relation": "COMPLEMENTS",
-      "confidence": "INFERRED",
-      "source": "skill:seo-audit",
-      "target": "skill:salon-website:content-production"
-    },
-    {
-      "relation": "COMPLEMENTS",
-      "confidence": "INFERRED",
-      "source": "skill:seo-audit",
-      "target": "skill:salon-website:schema-markup"
     },
     {
       "relation": "USED_BY",
@@ -964,7 +851,7 @@
       "relation": "USES",
       "confidence": "INFERRED",
       "source": "skill:website-traffic-checker",
-      "target": "project:salon-website"
+      "target": "project:salon-os"
     },
     {
       "relation": "USED_BY",
@@ -983,78 +870,6 @@
       "confidence": "EXTRACTED",
       "source": "skill:website-traffic-checker",
       "target": "connector:similarweb"
-    },
-    {
-      "relation": "USES",
-      "confidence": "EXTRACTED",
-      "source": "project:salon-website",
-      "target": "skill:salon-website:content-production"
-    },
-    {
-      "relation": "USES",
-      "confidence": "EXTRACTED",
-      "source": "project:salon-website",
-      "target": "skill:salon-website:pr-review-expert"
-    },
-    {
-      "relation": "USES",
-      "confidence": "EXTRACTED",
-      "source": "project:salon-website",
-      "target": "skill:salon-website:programmatic-seo"
-    },
-    {
-      "relation": "USES",
-      "confidence": "EXTRACTED",
-      "source": "project:salon-website",
-      "target": "skill:salon-website:schema-markup"
-    },
-    {
-      "relation": "USES",
-      "confidence": "EXTRACTED",
-      "source": "project:salon-website",
-      "target": "skill:salon-website:social-content"
-    },
-    {
-      "relation": "USES",
-      "confidence": "EXTRACTED",
-      "source": "project:salon-website",
-      "target": "skill:salon-website:social-media-manager"
-    },
-    {
-      "relation": "DOCUMENTED_BY",
-      "confidence": "EXTRACTED",
-      "source": "project:salon-website",
-      "target": "knowledge:salon-website"
-    },
-    {
-      "relation": "USED_BY",
-      "confidence": "EXTRACTED",
-      "source": "project:salon-website",
-      "target": "connector:cloudflare"
-    },
-    {
-      "relation": "USED_BY",
-      "confidence": "EXTRACTED",
-      "source": "project:salon-website",
-      "target": "connector:wix"
-    },
-    {
-      "relation": "COMPLEMENTS",
-      "confidence": "INFERRED",
-      "source": "skill:salon-website:content-production",
-      "target": "skill:salon-website:social-content"
-    },
-    {
-      "relation": "COMPLEMENTS",
-      "confidence": "INFERRED",
-      "source": "skill:salon-website:programmatic-seo",
-      "target": "skill:salon-website:schema-markup"
-    },
-    {
-      "relation": "COMPLEMENTS",
-      "confidence": "INFERRED",
-      "source": "skill:salon-website:social-content",
-      "target": "skill:salon-website:social-media-manager"
     }
   ]
 }

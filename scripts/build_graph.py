@@ -97,13 +97,11 @@ SKILL_SYNERGIES = {
     "schema-markup":          ["seo-audit", "programmatic-seo"],
 }
 
-# Projekt-zu-Skill-Verbindungen (welche universellen Skills nutzt welches Projekt)
+# Projekt-zu-Skill-Verbindungen — EBENE 1: Unternehmens-OS
 PROJECT_USES_SKILLS = {
-    "salon-website": ["seo-audit", "content-gap-analysis", "keyword-research",
-                      "website-traffic-checker", "backlink-analysis", "imagegen",
-                      "automation-and-scheduling"],
-
-    "salon-astro-website": [],  # Auto-registriert am 2026-07-03
+    "salon-os": ["seo-audit", "content-gap-analysis", "keyword-research",
+                 "website-traffic-checker", "backlink-analysis", "imagegen",
+                 "automation-and-scheduling", "social-content", "schema-markup"],
 }
 
 
@@ -135,14 +133,14 @@ def build_graph() -> nx.Graph:
     G = nx.Graph()
     all_skill_nodes = {}  # skill_dir_name → node_id
 
-    # ── EBENE 1: System-Kern ───────────────────────────────────────────────
+    # ── EBENE 0: Intelligence Layer (System-Kern) ────────────────────────────
     G.add_node("system:brain", label="Manus System Brain",
                type="system", layer="core",
-               description="Zentrales KI-Betriebssystem. Enthält den Wissensgraphen, universelle Skills und Projekt-Referenzen.",
+               description="EBENE 0: Intelligence Layer. Koordiniert alle Unternehmens-OS und Satelliten.",
                repo="Friseurehattstedt/manus-system-brain",
                community=0)
 
-    # ── EBENE 2: Universelle Manus-Skills ─────────────────────────────────
+    # ── EBENE 0: Universelle Skills (Teil des Intelligence Layer) ──────────
     print("[build] Universelle Manus-Skills...")
     cat_community = {"seo": 1, "system": 2, "media": 3, "integration": 4}
 
@@ -173,7 +171,7 @@ def build_graph() -> nx.Graph:
         G.add_edge(f"category:manus-{cat}", node_id, relation="CONTAINS", confidence="EXTRACTED")
         print(f"  + Manus-Skill: {meta['name']} [{cat}]")
 
-    # ── EBENE 3: Projekte ──────────────────────────────────────────────────
+    # ── EBENE 1: Unternehmens-OS (z.B. salon-os) ────────────────────────────
     print("\n[build] Projekte...")
     if PROJECTS_DIR.exists():
         for project_dir in sorted(PROJECTS_DIR.iterdir()):
@@ -190,10 +188,12 @@ def build_graph() -> nx.Graph:
                     proj_repo = repo_m.group(1)
                 proj_desc = content.split("\n")[2][:200] if len(content.split("\n")) > 2 else ""
 
-            G.add_node(proj_node, label=project_dir.name.replace("-", " ").title(),
-                       type="project", layer="project",
+            proj_label = "Salon OS — Die Friseure Gumbert & Partner" if project_dir.name == "salon-os" else project_dir.name.replace("-", " ").title()
+            proj_layer = "unternehmens-os" if project_dir.name.endswith("-os") else "project"
+            G.add_node(proj_node, label=proj_label,
+                       type="project", layer=proj_layer,
                        description=proj_desc, repo=proj_repo, community=5)
-            G.add_edge("system:brain", proj_node, relation="MANAGES", confidence="EXTRACTED")
+            G.add_edge("system:brain", proj_node, relation="COORDINATES", confidence="EXTRACTED")
             print(f"  + Projekt: {project_dir.name}")
 
             # Projekt-Skills

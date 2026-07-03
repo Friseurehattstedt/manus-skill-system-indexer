@@ -2,7 +2,7 @@
 
 > **Für jeden KI-Agenten:** Lies zuerst `SYSTEM.md` um den Systemgedanken zu verstehen. Dieser Bericht ist der operative Überblick.
 
-> Generiert: 2026-07-03 14:05 | Knoten: **46** | Kanten: **89** | Manus-Skills: **20** | Projekt-Skills: **6** | Projekte: **2** | Konnektoren: **12**
+> Generiert: 2026-07-03 15:19 | Knoten: **38** | Kanten: **72** | Manus-Skills: **20** | Projekt-Skills: **0** | Projekte: **1** | Konnektoren: **12**
 
 ---
 
@@ -14,8 +14,8 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 |---|---|:---:|
 | **Kern** | Manus System Brain (dieses Repo) | 1 |
 | **Universelle Skills** | Plattformübergreifende Fähigkeiten | 20 |
-| **Projekte** | Spezifische Anwendungen (z.B. Salon-Website) | 2 |
-| **Projekt-Skills** | Projektspezifische Fähigkeiten | 6 |
+| **Projekte** | Spezifische Anwendungen (z.B. Salon-Website) | 1 |
+| **Projekt-Skills** | Projektspezifische Fähigkeiten | 0 |
 | **Konnektoren** | Externe APIs und Integrationen | 12 (2 aktiv) |
 
 ---
@@ -66,22 +66,9 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 
 ## Projekte
 
-### Salon Astro Website
+### Salon OS — Die Friseure Gumbert & Partner
 
-**Repo:** `Friseurehattstedt/salon-astro-website` | **Beschreibung:** **Repo:** `Friseurehattstedt/salon-astro-website` (private)
-
-### Salon Website
-
-**Repo:** `Friseurehattstedt/salon-astro-website` | **Beschreibung:** **Repo:** `Friseurehattstedt/salon-astro-website` (privat)
-
-**Projekt-spezifische Skills:**
-
-- **content-production** — 
-- **pr-review-expert** — 
-- **programmatic-seo** — 
-- **schema-markup** — 
-- **social-content** — 
-- **social-media-manager** — 
+**Repo:** `Friseurehattstedt/salon-os` | **Beschreibung:** **GitHub-Repo:** `Friseurehattstedt/salon-os` (privat)
 
 **Nutzt universelle Skills:** seo-audit, content-gap-analysis, keyword-research, website-traffic-checker, backlink-analysis, imagegen, automation-and-scheduling
 
@@ -91,16 +78,16 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 
 | Rang | Knoten | Typ | Ebene | Verbindungen |
 |:---:|---|---|---|:---:|
-| 1 | **Salon Website** | project | project | 17 |
-| 2 | **website-traffic-checker** | skill | manus | 10 |
-| 3 | **System & Infrastruktur** | category | manus | 9 |
-| 4 | **keyword-research** | skill | manus | 9 |
-| 5 | **SEO & Marketing** | category | manus | 8 |
-| 6 | **seo-audit** | skill | manus | 8 |
-| 7 | **automation-and-scheduling** | skill | manus | 7 |
-| 8 | **manus-api** | skill | manus | 7 |
-| 9 | **Manus System Brain** | system | core | 6 |
-| 10 | **backlink-analysis** | skill | manus | 6 |
+| 1 | **website-traffic-checker** | skill | manus | 10 |
+| 2 | **System & Infrastruktur** | category | manus | 9 |
+| 3 | **SEO & Marketing** | category | manus | 8 |
+| 4 | **Salon OS — Die Friseure Gumbert & Partner** | project | unternehmens-os | 8 |
+| 5 | **automation-and-scheduling** | skill | manus | 7 |
+| 6 | **keyword-research** | skill | manus | 7 |
+| 7 | **manus-api** | skill | manus | 7 |
+| 8 | **backlink-analysis** | skill | manus | 6 |
+| 9 | **seo-audit** | skill | manus | 6 |
+| 10 | **skill-creator** | skill | manus | 6 |
 
 ---
 
