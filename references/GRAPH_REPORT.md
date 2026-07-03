@@ -2,7 +2,7 @@
 
 > **Für jeden KI-Agenten:** Lies zuerst `SYSTEM.md` um den Systemgedanken zu verstehen. Dieser Bericht ist der operative Überblick.
 
-> Generiert: 2026-07-03 15:47 | Knoten: **49** | Kanten: **83** | Manus-Skills: **20** | Projekt-Skills: **11** | Projekte: **1** | Konnektoren: **12**
+> Generiert: 2026-07-03 16:23 | Knoten: **54** | Kanten: **88** | Manus-Skills: **24** | Projekt-Skills: **11** | Projekte: **1** | Konnektoren: **12**
 
 ---
 
@@ -13,7 +13,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | Ebene | Was | Anzahl |
 |---|---|:---:|
 | **Kern** | Manus System Brain (dieses Repo) | 1 |
-| **Universelle Skills** | Plattformübergreifende Fähigkeiten | 20 |
+| **Universelle Skills** | Plattformübergreifende Fähigkeiten | 24 |
 | **Projekte** | Spezifische Anwendungen (z.B. Salon-Website) | 1 |
 | **Projekt-Skills** | Projektspezifische Fähigkeiten | 11 |
 | **Konnektoren** | Externe APIs und Integrationen | 12 (2 aktiv) |
@@ -45,7 +45,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | **manus-config** |  |  | 1,365 |
 | **persistent-computing** |  |  | 1,262 |
 | **skill-creator** |  | ✓ | 1,425 |
-| **system-indexer** |  | ✓ | 440 |
+| **system-indexer** |  | ✓ | 552 |
 
 ### Medien & Kreation
 
@@ -99,9 +99,9 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | 5 | **automation-and-scheduling** | skill | manus | 7 |
 | 6 | **keyword-research** | skill | manus | 7 |
 | 7 | **manus-api** | skill | manus | 7 |
-| 8 | **backlink-analysis** | skill | manus | 6 |
-| 9 | **seo-audit** | skill | manus | 6 |
-| 10 | **skill-creator** | skill | manus | 6 |
+| 8 | **Manus System Brain** | system | core | 6 |
+| 9 | **backlink-analysis** | skill | manus | 6 |
+| 10 | **seo-audit** | skill | manus | 6 |
 
 ---
 

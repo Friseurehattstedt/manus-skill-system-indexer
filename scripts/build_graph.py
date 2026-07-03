@@ -46,6 +46,7 @@ MANUS_SKILL_CATEGORIES = {
                     "system-indexer"],
     "media":       ["imagegen", "music-prompter", "tts-prompter"],
     "integration": ["github-gem-seeker", "gws-best-practices"],
+    "token-efficiency": ["caveman", "superpowers-core", "superpowers-debugging", "superpowers-verification"],
 }
 
 # Salon-Projekt-Skill-Kategorien
@@ -53,6 +54,10 @@ SALON_SKILL_CATEGORIES = {
     "salon-content": ["content-production", "social-content", "social-media-manager"],
     "salon-seo":     ["programmatic-seo", "schema-markup", "seo-audit"],
     "salon-dev":     ["pr-review-expert"],
+    # Design-Skills (neu)
+    "salon-design":  ["emil-design-eng", "review-animations", "ui-ux-pro-max",
+                      "uiux-design", "uiux-design-system", "uiux-brand", "uiux-ui-styling",
+                      "brandkit", "image-to-code", "extract-design-system", "web-design-guidelines"],
 }
 
 # Konnektor → Skill-Verbindungen
@@ -95,13 +100,29 @@ SKILL_SYNERGIES = {
     "programmatic-seo":       ["schema-markup", "keyword-research"],
     "social-content":         ["content-production", "social-media-manager"],
     "schema-markup":          ["seo-audit", "programmatic-seo"],
+    # Design-Synergien (neu)
+    "emil-design-eng":        ["review-animations", "ui-ux-pro-max", "image-to-code"],
+    "review-animations":      ["emil-design-eng", "web-design-guidelines"],
+    "ui-ux-pro-max":          ["uiux-design", "uiux-design-system", "uiux-brand", "uiux-ui-styling",
+                               "extract-design-system", "brandkit"],
+    "uiux-design":            ["ui-ux-pro-max", "uiux-design-system"],
+    "uiux-design-system":     ["extract-design-system", "uiux-brand", "uiux-ui-styling"],
+    "uiux-brand":             ["brandkit", "uiux-design-system"],
+    "uiux-ui-styling":        ["ui-ux-pro-max", "web-design-guidelines"],
+    "brandkit":               ["uiux-brand", "image-to-code"],
+    "image-to-code":          ["emil-design-eng", "brandkit", "ui-ux-pro-max"],
+    "extract-design-system":  ["uiux-design-system", "ui-ux-pro-max"],
+    "web-design-guidelines":  ["ui-ux-pro-max", "review-animations"],
 }
 
 # Projekt-zu-Skill-Verbindungen — EBENE 1: Unternehmens-OS
 PROJECT_USES_SKILLS = {
     "salon-os": ["seo-audit", "content-gap-analysis", "keyword-research",
                  "website-traffic-checker", "backlink-analysis", "imagegen",
-                 "automation-and-scheduling", "social-content", "schema-markup"],
+                 "automation-and-scheduling", "social-content", "schema-markup",
+                 # Design-Skills
+                 "emil-design-eng", "ui-ux-pro-max", "web-design-guidelines",
+                 "extract-design-system", "image-to-code", "brandkit"],
 }
 
 
@@ -142,12 +163,13 @@ def build_graph() -> nx.Graph:
 
     # ── EBENE 0: Universelle Skills (Teil des Intelligence Layer) ──────────
     print("[build] Universelle Manus-Skills...")
-    cat_community = {"seo": 1, "system": 2, "media": 3, "integration": 4}
+    cat_community = {"seo": 1, "system": 2, "media": 3, "integration": 4, "token-efficiency": 5}
 
     for cat, skills in MANUS_SKILL_CATEGORIES.items():
         cat_node = f"category:manus-{cat}"
         cat_labels = {"seo": "SEO & Marketing", "system": "System & Infrastruktur",
-                      "media": "Medien & Kreation", "integration": "Integrationen"}
+                      "media": "Medien & Kreation", "integration": "Integrationen",
+                      "token-efficiency": "Token-Effizienz & Qualität"}
         G.add_node(cat_node, label=cat_labels[cat], type="category",
                    layer="manus", community=cat_community[cat])
         G.add_edge("system:brain", cat_node, relation="CONTAINS", confidence="EXTRACTED")

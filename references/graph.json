@@ -41,6 +41,13 @@
       "id": "category:manus-integration"
     },
     {
+      "label": "Token-Effizienz & Qualität",
+      "type": "category",
+      "layer": "manus",
+      "community": 5,
+      "id": "category:manus-token-efficiency"
+    },
+    {
       "label": "automation-and-scheduling",
       "type": "skill",
       "layer": "manus",
@@ -81,6 +88,20 @@
       "source_file": "skills/builtin-llm-models/SKILL.md",
       "community": 2,
       "id": "skill:builtin-llm-models"
+    },
+    {
+      "label": "caveman",
+      "type": "skill",
+      "layer": "manus",
+      "category": "token-efficiency",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 161,
+      "file_count": 1,
+      "source_file": "skills/caveman/SKILL.md",
+      "community": 5,
+      "id": "skill:caveman"
     },
     {
       "label": "content-gap-analysis",
@@ -279,6 +300,48 @@
       "id": "skill:skill-creator"
     },
     {
+      "label": "superpowers-core",
+      "type": "skill",
+      "layer": "manus",
+      "category": "token-efficiency",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 175,
+      "file_count": 1,
+      "source_file": "skills/superpowers-core/SKILL.md",
+      "community": 5,
+      "id": "skill:superpowers-core"
+    },
+    {
+      "label": "superpowers-debugging",
+      "type": "skill",
+      "layer": "manus",
+      "category": "token-efficiency",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 125,
+      "file_count": 1,
+      "source_file": "skills/superpowers-debugging/SKILL.md",
+      "community": 5,
+      "id": "skill:superpowers-debugging"
+    },
+    {
+      "label": "superpowers-verification",
+      "type": "skill",
+      "layer": "manus",
+      "category": "token-efficiency",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 118,
+      "file_count": 1,
+      "source_file": "skills/superpowers-verification/SKILL.md",
+      "community": 5,
+      "id": "skill:superpowers-verification"
+    },
+    {
       "label": "system-indexer",
       "type": "skill",
       "layer": "manus",
@@ -286,7 +349,7 @@
       "description": "",
       "has_scripts": true,
       "has_references": true,
-      "word_count": 440,
+      "word_count": 552,
       "file_count": 7,
       "source_file": "skills/system-indexer/SKILL.md",
       "community": 2,
@@ -585,6 +648,12 @@
       "target": "category:manus-integration"
     },
     {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "system:brain",
+      "target": "category:manus-token-efficiency"
+    },
+    {
       "relation": "COORDINATES",
       "confidence": "EXTRACTED",
       "source": "system:brain",
@@ -709,6 +778,30 @@
       "confidence": "EXTRACTED",
       "source": "category:manus-integration",
       "target": "skill:gws-best-practices"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-token-efficiency",
+      "target": "skill:caveman"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-token-efficiency",
+      "target": "skill:superpowers-core"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-token-efficiency",
+      "target": "skill:superpowers-debugging"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-token-efficiency",
+      "target": "skill:superpowers-verification"
     },
     {
       "relation": "USES",
