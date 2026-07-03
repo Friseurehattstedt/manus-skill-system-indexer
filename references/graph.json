@@ -321,6 +321,15 @@
       "id": "skill:website-traffic-checker"
     },
     {
+      "label": "Salon Astro Website",
+      "type": "project",
+      "layer": "project",
+      "description": "**Repo:** `Friseurehattstedt/salon-astro-website` (private)",
+      "repo": "Friseurehattstedt/salon-astro-website",
+      "community": 5,
+      "id": "project:salon-astro-website"
+    },
+    {
       "label": "Salon Website",
       "type": "project",
       "layer": "project",
@@ -536,6 +545,12 @@
       "confidence": "EXTRACTED",
       "source": "system:brain",
       "target": "category:manus-integration"
+    },
+    {
+      "relation": "MANAGES",
+      "confidence": "EXTRACTED",
+      "source": "system:brain",
+      "target": "project:salon-astro-website"
     },
     {
       "relation": "MANAGES",

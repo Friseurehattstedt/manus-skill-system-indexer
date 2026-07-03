@@ -2,7 +2,7 @@
 
 > **Für jeden KI-Agenten:** Lies zuerst `SYSTEM.md` um den Systemgedanken zu verstehen. Dieser Bericht ist der operative Überblick.
 
-> Generiert: 2026-07-03 13:51 | Knoten: **45** | Kanten: **88** | Manus-Skills: **20** | Projekt-Skills: **6** | Projekte: **1** | Konnektoren: **12**
+> Generiert: 2026-07-03 14:05 | Knoten: **46** | Kanten: **89** | Manus-Skills: **20** | Projekt-Skills: **6** | Projekte: **2** | Konnektoren: **12**
 
 ---
 
@@ -14,7 +14,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 |---|---|:---:|
 | **Kern** | Manus System Brain (dieses Repo) | 1 |
 | **Universelle Skills** | Plattformübergreifende Fähigkeiten | 20 |
-| **Projekte** | Spezifische Anwendungen (z.B. Salon-Website) | 1 |
+| **Projekte** | Spezifische Anwendungen (z.B. Salon-Website) | 2 |
 | **Projekt-Skills** | Projektspezifische Fähigkeiten | 6 |
 | **Konnektoren** | Externe APIs und Integrationen | 12 (2 aktiv) |
 
@@ -66,6 +66,10 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 
 ## Projekte
 
+### Salon Astro Website
+
+**Repo:** `Friseurehattstedt/salon-astro-website` | **Beschreibung:** **Repo:** `Friseurehattstedt/salon-astro-website` (private)
+
 ### Salon Website
 
 **Repo:** `Friseurehattstedt/salon-astro-website` | **Beschreibung:** **Repo:** `Friseurehattstedt/salon-astro-website` (privat)
@@ -95,8 +99,8 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | 6 | **seo-audit** | skill | manus | 8 |
 | 7 | **automation-and-scheduling** | skill | manus | 7 |
 | 8 | **manus-api** | skill | manus | 7 |
-| 9 | **backlink-analysis** | skill | manus | 6 |
-| 10 | **skill-creator** | skill | manus | 6 |
+| 9 | **Manus System Brain** | system | core | 6 |
+| 10 | **backlink-analysis** | skill | manus | 6 |
 
 ---
 

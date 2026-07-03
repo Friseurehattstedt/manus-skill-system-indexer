@@ -102,6 +102,8 @@ PROJECT_USES_SKILLS = {
     "salon-website": ["seo-audit", "content-gap-analysis", "keyword-research",
                       "website-traffic-checker", "backlink-analysis", "imagegen",
                       "automation-and-scheduling"],
+
+    "salon-astro-website": [],  # Auto-registriert am 2026-07-03
 }
 
 
