@@ -1,123 +1,157 @@
 #!/usr/bin/env python3
 """
-Manus System Brain — Knowledge Graph Builder
-=============================================
-Baut einen vollständigen Wissensgraphen aus:
-- Manus Skills (SKILL.md-Dateien)
-- Konnektoren (config.json)
-- Abhängigkeiten und semantische Beziehungen
+Manus System Brain — Universeller Wissensgraph-Builder
+=======================================================
+Baut EINEN zentralen Wissensgraphen aus ALLEN Teilen des Systems:
 
-Output: knowledge-graph/graph.json (NetworkX node-link Format)
-        knowledge-graph/GRAPH_REPORT.md (menschenlesbar)
+  1. Universelle Manus-Skills (skills/)
+  2. Projekt-Skills (projects/*/skills/)
+  3. Projekt-Wissen (projects/*/knowledge/)
+  4. Konnektoren (Manus config.json)
+  5. Repositories (GitHub-Struktur)
 
-Kompatibel mit: Graphify, NetworkX, jeder JSON-Parser
+SYSTEMGEDANKE: Alles ist ein Knoten. Nichts ist eine Insel.
+
+Output: knowledge-graph/graph.json  (NetworkX node-link, offener Standard)
+        knowledge-graph/GRAPH_REPORT.md (für Menschen + KI lesbar)
+
+Kompatibel mit: Graphify, NetworkX, jedem JSON-Parser, allen KI-Modellen.
 """
 
 import json
 import os
 import re
 import sys
+from datetime import datetime
 from pathlib import Path
 
 import networkx as nx
 from networkx.readwrite import json_graph
 
 # ── Pfade ──────────────────────────────────────────────────────────────────
-REPO_ROOT = Path(__file__).parent.parent
-SKILLS_DIR = REPO_ROOT / "skills"
-CONFIG_FILE = Path.home() / ".manus" / "config" / "config.json"
-OUTPUT_DIR = REPO_ROOT / "knowledge-graph"
+REPO_ROOT    = Path(__file__).parent.parent
+SKILLS_DIR   = REPO_ROOT / "skills"
+PROJECTS_DIR = REPO_ROOT / "projects"
+CONFIG_FILE  = Path.home() / ".manus" / "config" / "config.json"
+OUTPUT_DIR   = REPO_ROOT / "knowledge-graph"
 OUTPUT_DIR.mkdir(exist_ok=True)
 
-# ── Skill-Kategorien (semantisch) ──────────────────────────────────────────
-SKILL_CATEGORIES = {
-    "seo": ["seo-audit", "seo-competitor-analysis", "backlink-analysis",
-            "content-gap-analysis", "keyword-research", "website-traffic-checker",
-            "similarweb-analytics"],
-    "system": ["skill-creator", "manus-config", "manus-api", "persistent-computing",
-               "automation-and-scheduling", "builtin-llm-models", "internet-skill-finder"],
-    "media": ["imagegen", "music-prompter", "tts-prompter"],
-    "integration": ["gws-best-practices", "github-gem-seeker"],
+# ── Kategorien universeller Manus-Skills ──────────────────────────────────
+MANUS_SKILL_CATEGORIES = {
+    "seo":         ["backlink-analysis", "content-gap-analysis", "keyword-research",
+                    "seo-audit", "seo-competitor-analysis", "similarweb-analytics",
+                    "website-traffic-checker"],
+    "system":      ["automation-and-scheduling", "builtin-llm-models", "internet-skill-finder",
+                    "manus-api", "manus-config", "persistent-computing", "skill-creator",
+                    "system-indexer"],
+    "media":       ["imagegen", "music-prompter", "tts-prompter"],
+    "integration": ["github-gem-seeker", "gws-best-practices"],
 }
 
-# Connector-Keywords → Skill-Verbindungen
+# Salon-Projekt-Skill-Kategorien
+SALON_SKILL_CATEGORIES = {
+    "salon-content": ["content-production", "social-content", "social-media-manager"],
+    "salon-seo":     ["programmatic-seo", "schema-markup", "seo-audit"],
+    "salon-dev":     ["pr-review-expert"],
+}
+
+# Konnektor → Skill-Verbindungen
 CONNECTOR_SKILL_MAP = {
-    "Ahrefs": ["backlink-analysis", "website-traffic-checker", "seo-audit"],
-    "Ahrefs API": ["backlink-analysis", "website-traffic-checker", "keyword-research"],
-    "Semrush": ["keyword-research", "seo-competitor-analysis", "content-gap-analysis"],
-    "Similarweb": ["similarweb-analytics", "website-traffic-checker"],
-    "DataForSEO": ["keyword-research", "website-traffic-checker"],
-    "GitHub": ["github-gem-seeker", "manus-api", "skill-creator"],
-    "OpenAI": ["builtin-llm-models", "manus-api"],
-    "Google Drive": ["gws-best-practices"],
+    "Ahrefs":        ["backlink-analysis", "website-traffic-checker", "seo-audit"],
+    "Ahrefs API":    ["backlink-analysis", "keyword-research"],
+    "Semrush":       ["keyword-research", "seo-competitor-analysis", "content-gap-analysis"],
+    "Similarweb":    ["similarweb-analytics", "website-traffic-checker"],
+    "DataForSEO":    ["keyword-research", "website-traffic-checker"],
+    "GitHub":        ["github-gem-seeker", "manus-api", "skill-creator"],
+    "OpenAI":        ["builtin-llm-models", "manus-api"],
+    "Google Drive":  ["gws-best-practices"],
     "Google Sheets": ["gws-best-practices", "keyword-research"],
-    "Google Docs": ["gws-best-practices"],
+    "Google Docs":   ["gws-best-practices"],
     "Google Slides": ["gws-best-practices"],
-    "Slack": ["automation-and-scheduling", "manus-api"],
-    "Notion": ["automation-and-scheduling"],
-    "Airtable": ["automation-and-scheduling"],
+    "Slack":         ["automation-and-scheduling", "manus-api"],
+    "Notion":        ["automation-and-scheduling"],
+    "Cloudflare":    ["salon-website"],
+    "Phorest":       ["salon-website"],
+    "Wix":           ["salon-website"],
 }
 
-# Skill-zu-Skill-Abhängigkeiten (aus SKILL.md-Inhalten abgeleitet)
-SKILL_DEPENDENCIES = {
-    "backlink-analysis": ["website-traffic-checker", "seo-audit"],
-    "content-gap-analysis": ["keyword-research", "website-traffic-checker"],
-    "seo-competitor-analysis": ["website-traffic-checker", "seo-audit"],
-    "seo-audit": ["website-traffic-checker", "backlink-analysis"],
-    "keyword-research": ["website-traffic-checker"],
-    "imagegen": ["skill-creator"],
-    "music-prompter": ["skill-creator"],
-    "tts-prompter": ["skill-creator"],
-    "internet-skill-finder": ["skill-creator", "github-gem-seeker"],
-    "manus-api": ["automation-and-scheduling", "manus-config"],
-    "persistent-computing": ["manus-config", "automation-and-scheduling"],
-    "builtin-llm-models": ["manus-api"],
-    "gws-best-practices": ["automation-and-scheduling"],
+# Skill-zu-Skill-Synergien
+SKILL_SYNERGIES = {
+    "backlink-analysis":      ["website-traffic-checker", "seo-audit"],
+    "content-gap-analysis":   ["keyword-research", "website-traffic-checker"],
+    "seo-competitor-analysis":["website-traffic-checker", "seo-audit"],
+    "seo-audit":              ["website-traffic-checker", "backlink-analysis"],
+    "keyword-research":       ["website-traffic-checker"],
+    "imagegen":               ["skill-creator"],
+    "music-prompter":         ["skill-creator"],
+    "tts-prompter":           ["skill-creator"],
+    "internet-skill-finder":  ["skill-creator", "github-gem-seeker"],
+    "manus-api":              ["automation-and-scheduling", "manus-config"],
+    "persistent-computing":   ["manus-config", "automation-and-scheduling"],
+    "builtin-llm-models":     ["manus-api"],
+    "gws-best-practices":     ["automation-and-scheduling"],
+    # Salon-Synergien
+    "content-production":     ["seo-audit", "keyword-research", "social-content"],
+    "programmatic-seo":       ["schema-markup", "keyword-research"],
+    "social-content":         ["content-production", "social-media-manager"],
+    "schema-markup":          ["seo-audit", "programmatic-seo"],
+}
+
+# Projekt-zu-Skill-Verbindungen (welche universellen Skills nutzt welches Projekt)
+PROJECT_USES_SKILLS = {
+    "salon-website": ["seo-audit", "content-gap-analysis", "keyword-research",
+                      "website-traffic-checker", "backlink-analysis", "imagegen",
+                      "automation-and-scheduling"],
 }
 
 
 def parse_skill_frontmatter(skill_md_path: Path) -> dict:
-    """Liest Name und Beschreibung aus SKILL.md-Frontmatter."""
     content = skill_md_path.read_text(encoding="utf-8", errors="ignore")
     fm_match = re.search(r"^---\n(.*?)\n---", content, re.DOTALL)
     name = skill_md_path.parent.name
     description = ""
     if fm_match:
         fm = fm_match.group(1)
-        name_m = re.search(r"^name:\s*(.+)", fm, re.MULTILINE)
+        name_m = re.search(r'^name:\s*["\']?(.+?)["\']?\s*$', fm, re.MULTILINE)
         desc_m = re.search(r"^description:\s*>?\s*\n?(.*?)(?=\n\w|\Z)", fm, re.DOTALL)
         if name_m:
             name = name_m.group(1).strip()
         if desc_m:
             description = desc_m.group(1).strip().replace("\n", " ").replace("  ", " ")
-    # Zähle Dateien im Skill
     files = list(skill_md_path.parent.rglob("*"))
-    has_scripts = any("scripts" in str(f) for f in files)
-    has_references = any("references" in str(f) for f in files)
-    word_count = len(content.split())
     return {
         "name": name,
         "description": description[:300],
-        "has_scripts": has_scripts,
-        "has_references": has_references,
-        "word_count": word_count,
+        "has_scripts": any("scripts" in str(f) for f in files),
+        "has_references": any("references" in str(f) for f in files),
+        "word_count": len(content.split()),
         "file_count": len([f for f in files if f.is_file()]),
     }
 
 
-def get_skill_category(skill_dir: str) -> str:
-    for cat, skills in SKILL_CATEGORIES.items():
-        if skill_dir in skills:
-            return cat
-    return "general"
-
-
 def build_graph() -> nx.Graph:
     G = nx.Graph()
+    all_skill_nodes = {}  # skill_dir_name → node_id
 
-    # ── 1. Skill-Knoten ────────────────────────────────────────────────────
-    print("[build] Lese Skills...")
-    skill_nodes = {}
+    # ── EBENE 1: System-Kern ───────────────────────────────────────────────
+    G.add_node("system:brain", label="Manus System Brain",
+               type="system", layer="core",
+               description="Zentrales KI-Betriebssystem. Enthält den Wissensgraphen, universelle Skills und Projekt-Referenzen.",
+               repo="Friseurehattstedt/manus-system-brain",
+               community=0)
+
+    # ── EBENE 2: Universelle Manus-Skills ─────────────────────────────────
+    print("[build] Universelle Manus-Skills...")
+    cat_community = {"seo": 1, "system": 2, "media": 3, "integration": 4}
+
+    for cat, skills in MANUS_SKILL_CATEGORIES.items():
+        cat_node = f"category:manus-{cat}"
+        cat_labels = {"seo": "SEO & Marketing", "system": "System & Infrastruktur",
+                      "media": "Medien & Kreation", "integration": "Integrationen"}
+        G.add_node(cat_node, label=cat_labels[cat], type="category",
+                   layer="manus", community=cat_community[cat])
+        G.add_edge("system:brain", cat_node, relation="CONTAINS", confidence="EXTRACTED")
+
     for skill_dir in sorted(SKILLS_DIR.iterdir()):
         if not skill_dir.is_dir() or skill_dir.name.startswith("."):
             continue
@@ -126,264 +160,228 @@ def build_graph() -> nx.Graph:
             continue
         meta = parse_skill_frontmatter(skill_md)
         node_id = f"skill:{skill_dir.name}"
-        category = get_skill_category(skill_dir.name)
-        G.add_node(
-            node_id,
-            label=meta["name"],
-            type="skill",
-            category=category,
-            description=meta["description"],
-            has_scripts=meta["has_scripts"],
-            has_references=meta["has_references"],
-            word_count=meta["word_count"],
-            file_count=meta["file_count"],
-            source_file=f"skills/{skill_dir.name}/SKILL.md",
-            community=list(SKILL_CATEGORIES.keys()).index(category) if category in SKILL_CATEGORIES else 4,
-        )
-        skill_nodes[skill_dir.name] = node_id
-        print(f"  + Skill: {meta['name']} [{category}]")
+        cat = next((c for c, s in MANUS_SKILL_CATEGORIES.items() if skill_dir.name in s), "system")
+        G.add_node(node_id, label=meta["name"], type="skill", layer="manus",
+                   category=cat, description=meta["description"],
+                   has_scripts=meta["has_scripts"], has_references=meta["has_references"],
+                   word_count=meta["word_count"], file_count=meta["file_count"],
+                   source_file=f"skills/{skill_dir.name}/SKILL.md",
+                   community=cat_community.get(cat, 2))
+        all_skill_nodes[skill_dir.name] = node_id
+        G.add_edge(f"category:manus-{cat}", node_id, relation="CONTAINS", confidence="EXTRACTED")
+        print(f"  + Manus-Skill: {meta['name']} [{cat}]")
 
-    # ── 2. Kategorie-Knoten ────────────────────────────────────────────────
-    print("[build] Erstelle Kategorie-Knoten...")
-    cat_labels = {
-        "seo": "SEO & Marketing",
-        "system": "System & Infrastruktur",
-        "media": "Medien & Kreation",
-        "integration": "Integrationen & Tools",
-    }
-    for cat, label in cat_labels.items():
-        G.add_node(
-            f"category:{cat}",
-            label=label,
-            type="category",
-            community=list(SKILL_CATEGORIES.keys()).index(cat),
-        )
-        # Verbinde Skills mit ihrer Kategorie
-        for skill_dir in SKILL_CATEGORIES.get(cat, []):
-            if skill_dir in skill_nodes:
-                G.add_edge(
-                    skill_nodes[skill_dir],
-                    f"category:{cat}",
-                    relation="BELONGS_TO",
-                    confidence="EXTRACTED",
-                )
+    # ── EBENE 3: Projekte ──────────────────────────────────────────────────
+    print("\n[build] Projekte...")
+    if PROJECTS_DIR.exists():
+        for project_dir in sorted(PROJECTS_DIR.iterdir()):
+            if not project_dir.is_dir():
+                continue
+            proj_node = f"project:{project_dir.name}"
+            proj_readme = project_dir / "README.md"
+            proj_desc = ""
+            proj_repo = ""
+            if proj_readme.exists():
+                content = proj_readme.read_text(encoding="utf-8", errors="ignore")
+                repo_m = re.search(r"Repo.*?`([^`]+)`", content)
+                if repo_m:
+                    proj_repo = repo_m.group(1)
+                proj_desc = content.split("\n")[2][:200] if len(content.split("\n")) > 2 else ""
 
-    # ── 3. Skill-zu-Skill-Kanten ───────────────────────────────────────────
-    print("[build] Verbinde Skills untereinander...")
-    for skill_dir, deps in SKILL_DEPENDENCIES.items():
-        if skill_dir not in skill_nodes:
+            G.add_node(proj_node, label=project_dir.name.replace("-", " ").title(),
+                       type="project", layer="project",
+                       description=proj_desc, repo=proj_repo, community=5)
+            G.add_edge("system:brain", proj_node, relation="MANAGES", confidence="EXTRACTED")
+            print(f"  + Projekt: {project_dir.name}")
+
+            # Projekt-Skills
+            proj_skills_dir = project_dir / "skills"
+            if proj_skills_dir.exists():
+                for skill_dir in sorted(proj_skills_dir.iterdir()):
+                    if not skill_dir.is_dir():
+                        continue
+                    skill_md = skill_dir / "SKILL.md"
+                    if not skill_md.exists():
+                        continue
+                    meta = parse_skill_frontmatter(skill_md)
+                    node_id = f"skill:{project_dir.name}:{skill_dir.name}"
+                    cat = next((c for c, s in SALON_SKILL_CATEGORIES.items()
+                                if skill_dir.name in s), "salon-general")
+                    G.add_node(node_id, label=meta["name"], type="skill", layer="project",
+                               category=cat, description=meta["description"],
+                               project=project_dir.name,
+                               source_file=f"projects/{project_dir.name}/skills/{skill_dir.name}/SKILL.md",
+                               community=5)
+                    all_skill_nodes[f"{project_dir.name}:{skill_dir.name}"] = node_id
+                    G.add_edge(proj_node, node_id, relation="USES", confidence="EXTRACTED")
+                    print(f"    + Projekt-Skill: {meta['name']}")
+
+            # Projekt-Knowledge-Knoten
+            proj_knowledge_dir = project_dir / "knowledge"
+            if proj_knowledge_dir.exists():
+                knowledge_files = list(proj_knowledge_dir.glob("*.md"))
+                if knowledge_files:
+                    know_node = f"knowledge:{project_dir.name}"
+                    G.add_node(know_node, label=f"Wissen: {project_dir.name}",
+                               type="knowledge", layer="project",
+                               file_count=len(knowledge_files), community=5)
+                    G.add_edge(proj_node, know_node, relation="DOCUMENTED_BY", confidence="EXTRACTED")
+                    print(f"    + Knowledge: {len(knowledge_files)} Dateien")
+
+            # Projekt nutzt universelle Skills
+            for skill_name in PROJECT_USES_SKILLS.get(project_dir.name, []):
+                if skill_name in all_skill_nodes:
+                    G.add_edge(proj_node, all_skill_nodes[skill_name],
+                               relation="USES", confidence="INFERRED")
+
+    # ── EBENE 4: Skill-Synergien ───────────────────────────────────────────
+    print("\n[build] Skill-Synergien...")
+    for skill_name, deps in SKILL_SYNERGIES.items():
+        src_key = skill_name
+        src_node = all_skill_nodes.get(src_key) or all_skill_nodes.get(f"salon-website:{src_key}")
+        if not src_node:
             continue
         for dep in deps:
-            if dep not in skill_nodes:
-                continue
-            G.add_edge(
-                skill_nodes[skill_dir],
-                skill_nodes[dep],
-                relation="COMPLEMENTS",
-                confidence="INFERRED",
-            )
+            dep_node = all_skill_nodes.get(dep) or all_skill_nodes.get(f"salon-website:{dep}")
+            if dep_node and src_node != dep_node:
+                G.add_edge(src_node, dep_node, relation="COMPLEMENTS", confidence="INFERRED")
 
-    # ── 4. Konnektoren laden ───────────────────────────────────────────────
-    print("[build] Lese Konnektoren...")
+    # ── EBENE 5: Konnektoren ───────────────────────────────────────────────
+    print("\n[build] Konnektoren...")
     connectors_loaded = 0
     if CONFIG_FILE.exists():
         with open(CONFIG_FILE) as f:
             config = json.load(f)
-        connectors = config.get("connectors", [])
-        enabled_connectors = [c for c in connectors if c.get("enabled")]
-        # Alle Konnektoren als Knoten (enabled + wichtige disabled)
-        important_names = set(CONNECTOR_SKILL_MAP.keys())
-        for c in connectors:
+        important = set(CONNECTOR_SKILL_MAP.keys())
+        for c in config.get("connectors", []):
             name = c.get("name", "")
-            if not c.get("enabled") and name not in important_names:
+            if not c.get("enabled") and name not in important:
                 continue
             node_id = f"connector:{name.lower().replace(' ', '-')}"
-            G.add_node(
-                node_id,
-                label=name,
-                type="connector",
-                enabled=c.get("enabled", False),
-                description=c.get("brief", "")[:200],
-                community=5,
-            )
+            G.add_node(node_id, label=name, type="connector", layer="connector",
+                       enabled=c.get("enabled", False),
+                       description=c.get("brief", "")[:200], community=6)
             connectors_loaded += 1
-            # Verbinde mit Skills
             for conn_name, skill_list in CONNECTOR_SKILL_MAP.items():
                 if conn_name.lower() == name.lower():
-                    for skill_dir in skill_list:
-                        if skill_dir in skill_nodes:
-                            G.add_edge(
-                                node_id,
-                                skill_nodes[skill_dir],
-                                relation="USED_BY",
-                                confidence="EXTRACTED",
-                            )
-    print(f"  + {connectors_loaded} Konnektoren geladen")
+                    for s in skill_list:
+                        target = all_skill_nodes.get(s) or f"project:{s}"
+                        if G.has_node(target):
+                            G.add_edge(node_id, target, relation="USED_BY", confidence="EXTRACTED")
+    print(f"  + {connectors_loaded} Konnektoren")
 
-    # ── 5. Zentral-Knoten: Manus OS ────────────────────────────────────────
-    G.add_node(
-        "system:manus-os",
-        label="Manus OS",
-        type="system",
-        description="Zentrales KI-Agenten-Betriebssystem mit Skills, Konnektoren und Wissensbasis",
-        community=6,
-    )
-    # Verbinde alle Kategorien mit dem Zentrum
-    for cat in cat_labels:
-        G.add_edge("system:manus-os", f"category:{cat}", relation="CONTAINS", confidence="EXTRACTED")
-
-    print(f"\n[build] Graph fertig: {G.number_of_nodes()} Knoten, {G.number_of_edges()} Kanten")
+    print(f"\n[build] Fertig: {G.number_of_nodes()} Knoten, {G.number_of_edges()} Kanten")
     return G
 
 
-def write_graph_json(G: nx.Graph, output_path: Path):
+def write_graph_json(G: nx.Graph, path: Path):
     data = json_graph.node_link_data(G, edges="links")
-    with open(output_path, "w", encoding="utf-8") as f:
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
-    print(f"[output] graph.json → {output_path}")
+    print(f"[output] graph.json → {path}")
 
 
-def write_graph_report(G: nx.Graph, output_path: Path):
-    """Erstellt einen menschenlesbaren Bericht im Markdown-Format."""
-    skills = [(n, d) for n, d in G.nodes(data=True) if d.get("type") == "skill"]
-    connectors = [(n, d) for n, d in G.nodes(data=True) if d.get("type") == "connector"]
-    enabled_conn = [(n, d) for n, d in connectors if d.get("enabled")]
-
-    # Top-Knoten nach Grad (Zentralität)
-    degree_dict = dict(G.degree())
-    top_nodes = sorted(
-        [(n, d, degree_dict[n]) for n, d in G.nodes(data=True)],
-        key=lambda x: -x[2]
-    )[:10]
+def write_graph_report(G: nx.Graph, path: Path):
+    manus_skills  = [(n,d) for n,d in G.nodes(data=True) if d.get("type")=="skill" and d.get("layer")=="manus"]
+    proj_skills   = [(n,d) for n,d in G.nodes(data=True) if d.get("type")=="skill" and d.get("layer")=="project"]
+    projects      = [(n,d) for n,d in G.nodes(data=True) if d.get("type")=="project"]
+    connectors    = [(n,d) for n,d in G.nodes(data=True) if d.get("type")=="connector"]
+    enabled_conn  = [(n,d) for n,d in connectors if d.get("enabled")]
+    top_nodes     = sorted([(n,d,G.degree(n)) for n,d in G.nodes(data=True)], key=lambda x:-x[2])[:10]
 
     lines = [
-        "# Manus System Brain — Knowledge Graph Report",
+        "# Manus System Brain — Wissensgraph-Bericht",
         "",
-        "> Automatisch generiert von `knowledge-graph/build_graph.py`  ",
-        f"> Knoten: **{G.number_of_nodes()}** | Kanten: **{G.number_of_edges()}** | Skills: **{len(skills)}** | Konnektoren: **{len(connectors)}**",
+        "> **Für jeden KI-Agenten:** Lies zuerst `SYSTEM.md` um den Systemgedanken zu verstehen. Dieser Bericht ist der operative Überblick.",
         "",
-        "---",
-        "",
-        "## Überblick",
-        "",
-        f"Dieses System besteht aus **{len(skills)} Skills** und **{len(connectors)} Konnektoren** "
-        f"({len(enabled_conn)} aktiv). Der Wissensgraph enthält {G.number_of_nodes()} Knoten und "
-        f"{G.number_of_edges()} semantische Verbindungen.",
+        f"> Generiert: {datetime.now().strftime('%Y-%m-%d %H:%M')} | "
+        f"Knoten: **{G.number_of_nodes()}** | Kanten: **{G.number_of_edges()}** | "
+        f"Manus-Skills: **{len(manus_skills)}** | Projekt-Skills: **{len(proj_skills)}** | "
+        f"Projekte: **{len(projects)}** | Konnektoren: **{len(connectors)}**",
         "",
         "---",
         "",
-        "## Skills nach Kategorie",
+        "## Systemarchitektur",
+        "",
+        "Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:",
+        "",
+        "| Ebene | Was | Anzahl |",
+        "|---|---|:---:|",
+        f"| **Kern** | Manus System Brain (dieses Repo) | 1 |",
+        f"| **Universelle Skills** | Plattformübergreifende Fähigkeiten | {len(manus_skills)} |",
+        f"| **Projekte** | Spezifische Anwendungen (z.B. Salon-Website) | {len(projects)} |",
+        f"| **Projekt-Skills** | Projektspezifische Fähigkeiten | {len(proj_skills)} |",
+        f"| **Konnektoren** | Externe APIs und Integrationen | {len(connectors)} ({len(enabled_conn)} aktiv) |",
+        "",
+        "---",
+        "",
+        "## Universelle Manus-Skills",
         "",
     ]
 
-    cat_labels = {
-        "seo": "SEO & Marketing",
-        "system": "System & Infrastruktur",
-        "media": "Medien & Kreation",
-        "integration": "Integrationen & Tools",
-        "general": "Allgemein",
-    }
+    cat_labels = {"seo": "SEO & Marketing", "system": "System & Infrastruktur",
+                  "media": "Medien & Kreation", "integration": "Integrationen"}
     for cat, label in cat_labels.items():
-        cat_skills = [(n, d) for n, d in skills if d.get("category") == cat]
+        cat_skills = [(n,d) for n,d in manus_skills if d.get("category")==cat]
         if not cat_skills:
             continue
-        lines.append(f"### {label}")
-        lines.append("")
-        lines.append("| Skill | Beschreibung | Scripts | Refs | Wörter |")
-        lines.append("|---|---|:---:|:---:|---:|")
-        for n, d in sorted(cat_skills, key=lambda x: x[1].get("label", "")):
-            desc = d.get("description", "")[:80].replace("|", "/")
-            has_s = "✓" if d.get("has_scripts") else ""
-            has_r = "✓" if d.get("has_references") else ""
-            wc = d.get("word_count", 0)
-            lines.append(f"| **{d.get('label', n)}** | {desc} | {has_s} | {has_r} | {wc:,} |")
+        lines += [f"### {label}", "", "| Skill | Beschreibung | Scripts | Wörter |",
+                  "|---|---|:---:|---:|"]
+        for n, d in sorted(cat_skills, key=lambda x: x[1].get("label","")):
+            desc = d.get("description","")[:80].replace("|","/")
+            s = "✓" if d.get("has_scripts") else ""
+            lines.append(f"| **{d.get('label',n)}** | {desc} | {s} | {d.get('word_count',0):,} |")
         lines.append("")
 
-    lines += [
-        "---",
-        "",
-        "## Zentrale Knoten (höchste Vernetzung)",
-        "",
-        "Die folgenden Knoten haben die meisten Verbindungen im Graphen — sie sind die "
-        "kritischsten Teile des Systems:",
-        "",
-        "| Rang | Knoten | Typ | Verbindungen |",
-        "|:---:|---|---|:---:|",
-    ]
+    lines += ["---", "", "## Projekte", ""]
+    for n, d in projects:
+        lines += [f"### {d.get('label', n)}", "",
+                  f"**Repo:** `{d.get('repo','—')}` | **Beschreibung:** {d.get('description','')[:120]}",
+                  ""]
+        proj_name = n.replace("project:", "")
+        p_skills = [(sn,sd) for sn,sd in proj_skills if sd.get("project")==proj_name]
+        if p_skills:
+            lines += ["**Projekt-spezifische Skills:**", ""]
+            for sn, sd in p_skills:
+                lines.append(f"- **{sd.get('label',sn)}** — {sd.get('description','')[:80]}")
+            lines.append("")
+        univ_skills = [sn for sn in G.neighbors(n) if G.nodes[sn].get("type")=="skill" and G.nodes[sn].get("layer")=="manus"]
+        if univ_skills:
+            labels = [G.nodes[s].get("label",s) for s in univ_skills]
+            lines.append(f"**Nutzt universelle Skills:** {', '.join(labels)}")
+            lines.append("")
+
+    lines += ["---", "", "## Zentrale Knoten (höchste Vernetzung)", "",
+              "| Rang | Knoten | Typ | Ebene | Verbindungen |",
+              "|:---:|---|---|---|:---:|"]
     for i, (n, d, deg) in enumerate(top_nodes, 1):
-        label = d.get("label", n)
-        ntype = d.get("type", "")
-        lines.append(f"| {i} | **{label}** | {ntype} | {deg} |")
+        lines.append(f"| {i} | **{d.get('label',n)}** | {d.get('type','')} | {d.get('layer','')} | {deg} |")
 
-    lines += [
-        "",
-        "---",
-        "",
-        "## Aktive Konnektoren",
-        "",
-    ]
+    lines += ["", "---", "", "## Aktive Konnektoren", ""]
     if enabled_conn:
-        lines.append("| Konnektor | Beschreibung |")
-        lines.append("|---|---|")
+        lines += ["| Konnektor | Beschreibung |", "|---|---|"]
         for n, d in enabled_conn:
-            desc = d.get("description", "")[:80].replace("|", "/")
-            lines.append(f"| **{d.get('label', n)}** | {desc} |")
+            lines.append(f"| **{d.get('label',n)}** | {d.get('description','')[:80].replace('|','/')} |")
     else:
         lines.append("_Keine Konnektoren aktiv._")
 
-    lines += [
-        "",
-        "---",
-        "",
-        "## Skill-Verbindungen (Synergien)",
-        "",
-        "Diese Skills ergänzen sich gegenseitig und sollten kombiniert eingesetzt werden:",
-        "",
-    ]
-    for skill_dir, deps in {
-        "seo-audit": ["backlink-analysis", "website-traffic-checker"],
-        "content-gap-analysis": ["keyword-research", "seo-competitor-analysis"],
-        "manus-api": ["automation-and-scheduling", "manus-config"],
-        "imagegen": ["tts-prompter", "music-prompter"],
-    }.items():
-        if skill_dir in [d.get("source_file", "").split("/")[1] for _, d in skills]:
-            deps_str = " + ".join(f"`{d}`" for d in deps)
-            lines.append(f"- **`{skill_dir}`** → {deps_str}")
+    lines += ["", "---", "", "## Für KI-Agenten: Graph abfragen", "",
+              "```python", "import json, networkx as nx",
+              "from networkx.readwrite import json_graph", "",
+              "with open('knowledge-graph/graph.json') as f:",
+              "    G = json_graph.node_link_graph(json.load(f), edges='links')", "",
+              "# Alle Projekte", "projects = [d['label'] for _,d in G.nodes(data=True) if d.get('type')=='project']",
+              "# Skills eines Projekts", "skills = list(G.neighbors('project:salon-website'))",
+              "# Kürzester Pfad", "path = nx.shortest_path(G, 'project:salon-website', 'connector:ahrefs')",
+              "```", ""]
 
-    lines += [
-        "",
-        "---",
-        "",
-        "## Für KI-Modelle: Wie dieser Graph genutzt wird",
-        "",
-        "```",
-        "# Graphen laden und abfragen (Python/NetworkX)",
-        "import json",
-        "import networkx as nx",
-        "from networkx.readwrite import json_graph",
-        "",
-        "with open('knowledge-graph/graph.json') as f:",
-        "    G = json_graph.node_link_graph(json.load(f), edges='links')",
-        "",
-        "# Alle Skills finden",
-        "skills = [d['label'] for _, d in G.nodes(data=True) if d.get('type') == 'skill']",
-        "",
-        "# Nachbarn eines Skills finden",
-        "neighbors = list(G.neighbors('skill:seo-audit'))",
-        "```",
-        "",
-        "---",
-        "",
-        "*Generiert am: " + __import__("datetime").datetime.now().strftime("%Y-%m-%d %H:%M") + " UTC*",
-    ]
-
-    output_path.write_text("\n".join(lines), encoding="utf-8")
-    print(f"[output] GRAPH_REPORT.md → {output_path}")
+    path.write_text("\n".join(lines), encoding="utf-8")
+    print(f"[output] GRAPH_REPORT.md → {path}")
 
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("Manus System Brain — Knowledge Graph Builder")
+    print("Manus System Brain — Universeller Wissensgraph-Builder")
     print("=" * 60)
     G = build_graph()
     write_graph_json(G, OUTPUT_DIR / "graph.json")

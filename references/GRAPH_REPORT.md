@@ -1,81 +1,102 @@
-# Manus System Brain — Knowledge Graph Report
+# Manus System Brain — Wissensgraph-Bericht
 
-> Automatisch generiert von `knowledge-graph/build_graph.py`  
-> Knoten: **36** | Kanten: **65** | Skills: **20** | Konnektoren: **11**
+> **Für jeden KI-Agenten:** Lies zuerst `SYSTEM.md` um den Systemgedanken zu verstehen. Dieser Bericht ist der operative Überblick.
 
----
-
-## Überblick
-
-Dieses System besteht aus **20 Skills** und **11 Konnektoren** (2 aktiv). Der Wissensgraph enthält 36 Knoten und 65 semantische Verbindungen.
+> Generiert: 2026-07-03 13:51 | Knoten: **45** | Kanten: **88** | Manus-Skills: **20** | Projekt-Skills: **6** | Projekte: **1** | Konnektoren: **12**
 
 ---
 
-## Skills nach Kategorie
+## Systemarchitektur
+
+Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
+
+| Ebene | Was | Anzahl |
+|---|---|:---:|
+| **Kern** | Manus System Brain (dieses Repo) | 1 |
+| **Universelle Skills** | Plattformübergreifende Fähigkeiten | 20 |
+| **Projekte** | Spezifische Anwendungen (z.B. Salon-Website) | 1 |
+| **Projekt-Skills** | Projektspezifische Fähigkeiten | 6 |
+| **Konnektoren** | Externe APIs und Integrationen | 12 (2 aktiv) |
+
+---
+
+## Universelle Manus-Skills
 
 ### SEO & Marketing
 
-| Skill | Beschreibung | Scripts | Refs | Wörter |
-|---|---|:---:|:---:|---:|
-| **backlink-analysis** |  |  | ✓ | 2,547 |
-| **content-gap-analysis** |  | ✓ | ✓ | 4,638 |
-| **keyword-research** |  | ✓ | ✓ | 1,199 |
-| **seo-audit** |  | ✓ | ✓ | 3,194 |
-| **seo-competitor-analysis** |  | ✓ | ✓ | 1,477 |
-| **similarweb-analytics** |  |  |  | 518 |
-| **website-traffic-checker** |  |  | ✓ | 1,750 |
+| Skill | Beschreibung | Scripts | Wörter |
+|---|---|:---:|---:|
+| **backlink-analysis** |  |  | 2,547 |
+| **content-gap-analysis** |  | ✓ | 4,638 |
+| **keyword-research** |  | ✓ | 1,199 |
+| **seo-audit** |  | ✓ | 3,194 |
+| **seo-competitor-analysis** |  | ✓ | 1,477 |
+| **similarweb-analytics** |  |  | 518 |
+| **website-traffic-checker** |  |  | 1,750 |
 
 ### System & Infrastruktur
 
-| Skill | Beschreibung | Scripts | Refs | Wörter |
-|---|---|:---:|:---:|---:|
-| **automation-and-scheduling** |  |  | ✓ | 2,654 |
-| **builtin-llm-models** |  | ✓ |  | 1,779 |
-| **internet-skill-finder** |  | ✓ | ✓ | 212 |
-| **manus-api** |  |  |  | 1,257 |
-| **manus-config** |  |  |  | 1,365 |
-| **persistent-computing** |  |  | ✓ | 1,262 |
-| **skill-creator** |  | ✓ | ✓ | 1,425 |
+| Skill | Beschreibung | Scripts | Wörter |
+|---|---|:---:|---:|
+| **automation-and-scheduling** |  |  | 2,654 |
+| **builtin-llm-models** |  | ✓ | 1,779 |
+| **internet-skill-finder** |  | ✓ | 212 |
+| **manus-api** |  |  | 1,257 |
+| **manus-config** |  |  | 1,365 |
+| **persistent-computing** |  |  | 1,262 |
+| **skill-creator** |  | ✓ | 1,425 |
+| **system-indexer** |  | ✓ | 440 |
 
 ### Medien & Kreation
 
-| Skill | Beschreibung | Scripts | Refs | Wörter |
-|---|---|:---:|:---:|---:|
-| **imagegen** |  |  | ✓ | 2,330 |
-| **music-prompter** |  |  |  | 1,742 |
-| **tts-prompter** |  |  |  | 2,485 |
+| Skill | Beschreibung | Scripts | Wörter |
+|---|---|:---:|---:|
+| **imagegen** |  |  | 2,330 |
+| **music-prompter** |  |  | 1,742 |
+| **tts-prompter** |  |  | 2,485 |
 
-### Integrationen & Tools
+### Integrationen
 
-| Skill | Beschreibung | Scripts | Refs | Wörter |
-|---|---|:---:|:---:|---:|
-| **github-gem-seeker** |  |  |  | 650 |
-| **gws-best-practices** |  |  |  | 747 |
+| Skill | Beschreibung | Scripts | Wörter |
+|---|---|:---:|---:|
+| **github-gem-seeker** |  |  | 650 |
+| **gws-best-practices** |  |  | 747 |
 
-### Allgemein
+---
 
-| Skill | Beschreibung | Scripts | Refs | Wörter |
-|---|---|:---:|:---:|---:|
-| **system-indexer** |  | ✓ | ✓ | 278 |
+## Projekte
+
+### Salon Website
+
+**Repo:** `Friseurehattstedt/salon-astro-website` | **Beschreibung:** **Repo:** `Friseurehattstedt/salon-astro-website` (privat)
+
+**Projekt-spezifische Skills:**
+
+- **content-production** — 
+- **pr-review-expert** — 
+- **programmatic-seo** — 
+- **schema-markup** — 
+- **social-content** — 
+- **social-media-manager** — 
+
+**Nutzt universelle Skills:** seo-audit, content-gap-analysis, keyword-research, website-traffic-checker, backlink-analysis, imagegen, automation-and-scheduling
 
 ---
 
 ## Zentrale Knoten (höchste Vernetzung)
 
-Die folgenden Knoten haben die meisten Verbindungen im Graphen — sie sind die kritischsten Teile des Systems:
-
-| Rang | Knoten | Typ | Verbindungen |
-|:---:|---|---|:---:|
-| 1 | **website-traffic-checker** | skill | 10 |
-| 2 | **SEO & Marketing** | category | 8 |
-| 3 | **System & Infrastruktur** | category | 8 |
-| 4 | **automation-and-scheduling** | skill | 7 |
-| 5 | **manus-api** | skill | 7 |
-| 6 | **keyword-research** | skill | 6 |
-| 7 | **skill-creator** | skill | 6 |
-| 8 | **backlink-analysis** | skill | 5 |
-| 9 | **seo-audit** | skill | 5 |
-| 10 | **content-gap-analysis** | skill | 4 |
+| Rang | Knoten | Typ | Ebene | Verbindungen |
+|:---:|---|---|---|:---:|
+| 1 | **Salon Website** | project | project | 17 |
+| 2 | **website-traffic-checker** | skill | manus | 10 |
+| 3 | **System & Infrastruktur** | category | manus | 9 |
+| 4 | **keyword-research** | skill | manus | 9 |
+| 5 | **SEO & Marketing** | category | manus | 8 |
+| 6 | **seo-audit** | skill | manus | 8 |
+| 7 | **automation-and-scheduling** | skill | manus | 7 |
+| 8 | **manus-api** | skill | manus | 7 |
+| 9 | **backlink-analysis** | skill | manus | 6 |
+| 10 | **skill-creator** | skill | manus | 6 |
 
 ---
 
@@ -88,35 +109,19 @@ Die folgenden Knoten haben die meisten Verbindungen im Graphen — sie sind die 
 
 ---
 
-## Skill-Verbindungen (Synergien)
+## Für KI-Agenten: Graph abfragen
 
-Diese Skills ergänzen sich gegenseitig und sollten kombiniert eingesetzt werden:
-
-- **`seo-audit`** → `backlink-analysis` + `website-traffic-checker`
-- **`content-gap-analysis`** → `keyword-research` + `seo-competitor-analysis`
-- **`manus-api`** → `automation-and-scheduling` + `manus-config`
-- **`imagegen`** → `tts-prompter` + `music-prompter`
-
----
-
-## Für KI-Modelle: Wie dieser Graph genutzt wird
-
-```
-# Graphen laden und abfragen (Python/NetworkX)
-import json
-import networkx as nx
+```python
+import json, networkx as nx
 from networkx.readwrite import json_graph
 
 with open('knowledge-graph/graph.json') as f:
     G = json_graph.node_link_graph(json.load(f), edges='links')
 
-# Alle Skills finden
-skills = [d['label'] for _, d in G.nodes(data=True) if d.get('type') == 'skill']
-
-# Nachbarn eines Skills finden
-neighbors = list(G.neighbors('skill:seo-audit'))
+# Alle Projekte
+projects = [d['label'] for _,d in G.nodes(data=True) if d.get('type')=='project']
+# Skills eines Projekts
+skills = list(G.neighbors('project:salon-website'))
+# Kürzester Pfad
+path = nx.shortest_path(G, 'project:salon-website', 'connector:ahrefs')
 ```
-
----
-
-*Generiert am: 2026-07-03 13:27 UTC*

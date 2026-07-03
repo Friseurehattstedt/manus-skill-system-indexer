@@ -4,8 +4,46 @@
   "graph": {},
   "nodes": [
     {
+      "label": "Manus System Brain",
+      "type": "system",
+      "layer": "core",
+      "description": "Zentrales KI-Betriebssystem. Enthält den Wissensgraphen, universelle Skills und Projekt-Referenzen.",
+      "repo": "Friseurehattstedt/manus-system-brain",
+      "community": 0,
+      "id": "system:brain"
+    },
+    {
+      "label": "SEO & Marketing",
+      "type": "category",
+      "layer": "manus",
+      "community": 1,
+      "id": "category:manus-seo"
+    },
+    {
+      "label": "System & Infrastruktur",
+      "type": "category",
+      "layer": "manus",
+      "community": 2,
+      "id": "category:manus-system"
+    },
+    {
+      "label": "Medien & Kreation",
+      "type": "category",
+      "layer": "manus",
+      "community": 3,
+      "id": "category:manus-media"
+    },
+    {
+      "label": "Integrationen",
+      "type": "category",
+      "layer": "manus",
+      "community": 4,
+      "id": "category:manus-integration"
+    },
+    {
       "label": "automation-and-scheduling",
       "type": "skill",
+      "layer": "manus",
       "category": "system",
       "description": "",
       "has_scripts": false,
@@ -13,12 +51,13 @@
       "word_count": 2654,
       "file_count": 3,
       "source_file": "skills/automation-and-scheduling/SKILL.md",
-      "community": 1,
+      "community": 2,
       "id": "skill:automation-and-scheduling"
     },
     {
       "label": "backlink-analysis",
       "type": "skill",
+      "layer": "manus",
       "category": "seo",
       "description": "",
       "has_scripts": false,
@@ -26,12 +65,13 @@
       "word_count": 2547,
       "file_count": 2,
       "source_file": "skills/backlink-analysis/SKILL.md",
-      "community": 0,
+      "community": 1,
       "id": "skill:backlink-analysis"
     },
     {
       "label": "builtin-llm-models",
       "type": "skill",
+      "layer": "manus",
       "category": "system",
       "description": "",
       "has_scripts": true,
@@ -39,12 +79,13 @@
       "word_count": 1779,
       "file_count": 2,
       "source_file": "skills/builtin-llm-models/SKILL.md",
-      "community": 1,
+      "community": 2,
       "id": "skill:builtin-llm-models"
     },
     {
       "label": "content-gap-analysis",
       "type": "skill",
+      "layer": "manus",
       "category": "seo",
       "description": "",
       "has_scripts": true,
@@ -52,12 +93,13 @@
       "word_count": 4638,
       "file_count": 10,
       "source_file": "skills/content-gap-analysis/SKILL.md",
-      "community": 0,
+      "community": 1,
       "id": "skill:content-gap-analysis"
     },
     {
       "label": "github-gem-seeker",
       "type": "skill",
+      "layer": "manus",
       "category": "integration",
       "description": "",
       "has_scripts": false,
@@ -65,12 +107,13 @@
       "word_count": 650,
       "file_count": 1,
       "source_file": "skills/github-gem-seeker/SKILL.md",
-      "community": 3,
+      "community": 4,
       "id": "skill:github-gem-seeker"
     },
     {
       "label": "gws-best-practices",
       "type": "skill",
+      "layer": "manus",
       "category": "integration",
       "description": "",
       "has_scripts": false,
@@ -78,12 +121,13 @@
       "word_count": 747,
       "file_count": 1,
       "source_file": "skills/gws-best-practices/SKILL.md",
-      "community": 3,
+      "community": 4,
       "id": "skill:gws-best-practices"
     },
     {
       "label": "imagegen",
       "type": "skill",
+      "layer": "manus",
       "category": "media",
       "description": "",
       "has_scripts": false,
@@ -91,12 +135,13 @@
       "word_count": 2330,
       "file_count": 5,
       "source_file": "skills/imagegen/SKILL.md",
-      "community": 2,
+      "community": 3,
       "id": "skill:imagegen"
     },
     {
       "label": "internet-skill-finder",
       "type": "skill",
+      "layer": "manus",
       "category": "system",
       "description": "",
       "has_scripts": true,
@@ -104,12 +149,13 @@
       "word_count": 212,
       "file_count": 3,
       "source_file": "skills/internet-skill-finder/SKILL.md",
-      "community": 1,
+      "community": 2,
       "id": "skill:internet-skill-finder"
     },
     {
       "label": "keyword-research",
       "type": "skill",
+      "layer": "manus",
       "category": "seo",
       "description": "",
       "has_scripts": true,
@@ -117,12 +163,13 @@
       "word_count": 1199,
       "file_count": 3,
       "source_file": "skills/keyword-research/SKILL.md",
-      "community": 0,
+      "community": 1,
       "id": "skill:keyword-research"
     },
     {
       "label": "manus-api",
       "type": "skill",
+      "layer": "manus",
       "category": "system",
       "description": "",
       "has_scripts": false,
@@ -130,12 +177,13 @@
       "word_count": 1257,
       "file_count": 77,
       "source_file": "skills/manus-api/SKILL.md",
-      "community": 1,
+      "community": 2,
       "id": "skill:manus-api"
     },
     {
       "label": "manus-config",
       "type": "skill",
+      "layer": "manus",
       "category": "system",
       "description": "",
       "has_scripts": false,
@@ -143,12 +191,13 @@
       "word_count": 1365,
       "file_count": 1,
       "source_file": "skills/manus-config/SKILL.md",
-      "community": 1,
+      "community": 2,
       "id": "skill:manus-config"
     },
     {
       "label": "music-prompter",
       "type": "skill",
+      "layer": "manus",
       "category": "media",
       "description": "",
       "has_scripts": false,
@@ -156,12 +205,13 @@
       "word_count": 1742,
       "file_count": 1,
       "source_file": "skills/music-prompter/SKILL.md",
-      "community": 2,
+      "community": 3,
       "id": "skill:music-prompter"
     },
     {
       "label": "persistent-computing",
       "type": "skill",
+      "layer": "manus",
       "category": "system",
       "description": "",
       "has_scripts": false,
@@ -169,12 +219,13 @@
       "word_count": 1262,
       "file_count": 5,
       "source_file": "skills/persistent-computing/SKILL.md",
-      "community": 1,
+      "community": 2,
       "id": "skill:persistent-computing"
     },
     {
       "label": "seo-audit",
       "type": "skill",
+      "layer": "manus",
       "category": "seo",
       "description": "",
       "has_scripts": true,
@@ -182,12 +233,13 @@
       "word_count": 3194,
       "file_count": 4,
       "source_file": "skills/seo-audit/SKILL.md",
-      "community": 0,
+      "community": 1,
       "id": "skill:seo-audit"
     },
     {
       "label": "seo-competitor-analysis",
       "type": "skill",
+      "layer": "manus",
       "category": "seo",
       "description": "",
       "has_scripts": true,
@@ -195,12 +247,13 @@
       "word_count": 1477,
       "file_count": 5,
       "source_file": "skills/seo-competitor-analysis/SKILL.md",
-      "community": 0,
+      "community": 1,
       "id": "skill:seo-competitor-analysis"
     },
     {
       "label": "similarweb-analytics",
       "type": "skill",
+      "layer": "manus",
       "category": "seo",
       "description": "",
       "has_scripts": false,
@@ -208,12 +261,13 @@
       "word_count": 518,
       "file_count": 2,
       "source_file": "skills/similarweb-analytics/SKILL.md",
-      "community": 0,
+      "community": 1,
       "id": "skill:similarweb-analytics"
     },
     {
       "label": "skill-creator",
       "type": "skill",
+      "layer": "manus",
       "category": "system",
       "description": "",
       "has_scripts": true,
@@ -221,25 +275,27 @@
       "word_count": 1425,
       "file_count": 8,
       "source_file": "skills/skill-creator/SKILL.md",
-      "community": 1,
+      "community": 2,
       "id": "skill:skill-creator"
     },
     {
       "label": "system-indexer",
       "type": "skill",
-      "category": "general",
+      "layer": "manus",
+      "category": "system",
       "description": "",
       "has_scripts": true,
       "has_references": true,
-      "word_count": 278,
+      "word_count": 440,
       "file_count": 7,
       "source_file": "skills/system-indexer/SKILL.md",
-      "community": 4,
+      "community": 2,
       "id": "skill:system-indexer"
     },
     {
       "label": "tts-prompter",
       "type": "skill",
+      "layer": "manus",
       "category": "media",
       "description": "",
       "has_scripts": false,
@@ -247,12 +303,13 @@
       "word_count": 2485,
       "file_count": 1,
       "source_file": "skills/tts-prompter/SKILL.md",
-      "community": 2,
+      "community": 3,
       "id": "skill:tts-prompter"
     },
     {
       "label": "website-traffic-checker",
       "type": "skill",
+      "layer": "manus",
       "category": "seo",
       "description": "",
       "has_scripts": false,
@@ -260,135 +317,357 @@
       "word_count": 1750,
       "file_count": 3,
       "source_file": "skills/website-traffic-checker/SKILL.md",
-      "community": 0,
+      "community": 1,
       "id": "skill:website-traffic-checker"
     },
     {
-      "label": "SEO & Marketing",
-      "type": "category",
-      "community": 0,
-      "id": "category:seo"
+      "label": "Salon Website",
+      "type": "project",
+      "layer": "project",
+      "description": "**Repo:** `Friseurehattstedt/salon-astro-website` (privat)",
+      "repo": "Friseurehattstedt/salon-astro-website",
+      "community": 5,
+      "id": "project:salon-website"
     },
     {
-      "label": "System & Infrastruktur",
-      "type": "category",
-      "community": 1,
-      "id": "category:system"
+      "label": "content-production",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-content",
+      "description": "",
+      "project": "salon-website",
+      "source_file": "projects/salon-website/skills/content-production/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-website:content-production"
     },
     {
-      "label": "Medien & Kreation",
-      "type": "category",
-      "community": 2,
-      "id": "category:media"
+      "label": "pr-review-expert",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-dev",
+      "description": "",
+      "project": "salon-website",
+      "source_file": "projects/salon-website/skills/pr-review-expert/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-website:pr-review-expert"
     },
     {
-      "label": "Integrationen & Tools",
-      "type": "category",
-      "community": 3,
-      "id": "category:integration"
+      "label": "programmatic-seo",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-seo",
+      "description": "",
+      "project": "salon-website",
+      "source_file": "projects/salon-website/skills/programmatic-seo/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-website:programmatic-seo"
+    },
+    {
+      "label": "schema-markup",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-seo",
+      "description": "",
+      "project": "salon-website",
+      "source_file": "projects/salon-website/skills/schema-markup/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-website:schema-markup"
+    },
+    {
+      "label": "social-content",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-content",
+      "description": "",
+      "project": "salon-website",
+      "source_file": "projects/salon-website/skills/social-content/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-website:social-content"
+    },
+    {
+      "label": "social-media-manager",
+      "type": "skill",
+      "layer": "project",
+      "category": "salon-content",
+      "description": "",
+      "project": "salon-website",
+      "source_file": "projects/salon-website/skills/social-media-manager/SKILL.md",
+      "community": 5,
+      "id": "skill:salon-website:social-media-manager"
+    },
+    {
+      "label": "Wissen: salon-website",
+      "type": "knowledge",
+      "layer": "project",
+      "file_count": 14,
+      "community": 5,
+      "id": "knowledge:salon-website"
     },
     {
       "label": "Ahrefs",
       "type": "connector",
+      "layer": "connector",
       "enabled": false,
       "description": "Analyze SEO performance, track rankings, and research keywords",
-      "community": 5,
+      "community": 6,
       "id": "connector:ahrefs"
     },
     {
       "label": "Ahrefs API",
       "type": "connector",
+      "layer": "connector",
       "enabled": false,
       "description": "Optimize SEO strategies, analyze keywords, and track backlink performance",
-      "community": 5,
+      "community": 6,
       "id": "connector:ahrefs-api"
     },
     {
-      "label": "Airtable",
+      "label": "Cloudflare",
       "type": "connector",
+      "layer": "connector",
       "enabled": false,
-      "description": "Organize structured data, manage records, and collaborate with your team",
-      "community": 5,
-      "id": "connector:airtable"
+      "description": "Manage Cloudflare Workers, build applications, and deploy online resources",
+      "community": 6,
+      "id": "connector:cloudflare"
     },
     {
       "label": "DataForSEO",
       "type": "connector",
+      "layer": "connector",
       "enabled": false,
       "description": "Access comprehensive SEO and marketing analytics data",
-      "community": 5,
+      "community": 6,
       "id": "connector:dataforseo"
     },
     {
       "label": "GitHub",
       "type": "connector",
+      "layer": "connector",
       "enabled": true,
       "description": "Manage repositories, track code changes, and collaborate on team projects",
-      "community": 5,
+      "community": 6,
       "id": "connector:github"
     },
     {
       "label": "Google Drive",
       "type": "connector",
+      "layer": "connector",
       "enabled": false,
       "description": "Access your files, search instantly, and let Manus help you manage documents intelligently",
-      "community": 5,
+      "community": 6,
       "id": "connector:google-drive"
     },
     {
       "label": "Notion",
       "type": "connector",
+      "layer": "connector",
       "enabled": false,
       "description": "Search workspace content, update notes, and automate workflows in Notion",
-      "community": 5,
+      "community": 6,
       "id": "connector:notion"
     },
     {
       "label": "OpenAI",
       "type": "connector",
+      "layer": "connector",
       "enabled": true,
       "description": "Leverage GPT model series for intelligent text generation and processing",
-      "community": 5,
+      "community": 6,
       "id": "connector:openai"
     },
     {
       "label": "Semrush",
       "type": "connector",
+      "layer": "connector",
       "enabled": false,
       "description": "Boost SEO, analyze competitors, and optimize content strategy",
-      "community": 5,
+      "community": 6,
       "id": "connector:semrush"
     },
     {
       "label": "Similarweb",
       "type": "connector",
+      "layer": "connector",
       "enabled": false,
       "description": "Access website traffic, audience, SEO, and app intelligence from Similarweb",
-      "community": 5,
+      "community": 6,
       "id": "connector:similarweb"
     },
     {
       "label": "Slack",
       "type": "connector",
+      "layer": "connector",
       "enabled": false,
       "description": "Read and write Slack conversations in Manus",
-      "community": 5,
+      "community": 6,
       "id": "connector:slack"
     },
     {
-      "label": "Manus OS",
-      "type": "system",
-      "description": "Zentrales KI-Agenten-Betriebssystem mit Skills, Konnektoren und Wissensbasis",
+      "label": "Wix",
+      "type": "connector",
+      "layer": "connector",
+      "enabled": false,
+      "description": "Search website data, access content, and automate workflows within Wix",
       "community": 6,
-      "id": "system:manus-os"
+      "id": "connector:wix"
     }
   ],
   "links": [
     {
-      "relation": "BELONGS_TO",
+      "relation": "CONTAINS",
       "confidence": "EXTRACTED",
+      "source": "system:brain",
+      "target": "category:manus-seo"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "system:brain",
+      "target": "category:manus-system"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "system:brain",
+      "target": "category:manus-media"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "system:brain",
+      "target": "category:manus-integration"
+    },
+    {
+      "relation": "MANAGES",
+      "confidence": "EXTRACTED",
+      "source": "system:brain",
+      "target": "project:salon-website"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-seo",
+      "target": "skill:backlink-analysis"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-seo",
+      "target": "skill:content-gap-analysis"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-seo",
+      "target": "skill:keyword-research"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-seo",
+      "target": "skill:seo-audit"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-seo",
+      "target": "skill:seo-competitor-analysis"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-seo",
+      "target": "skill:similarweb-analytics"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-seo",
+      "target": "skill:website-traffic-checker"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:automation-and-scheduling"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:builtin-llm-models"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:internet-skill-finder"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:manus-api"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:manus-config"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:persistent-computing"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:skill-creator"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:system-indexer"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-media",
+      "target": "skill:imagegen"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-media",
+      "target": "skill:music-prompter"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-media",
+      "target": "skill:tts-prompter"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-integration",
+      "target": "skill:github-gem-seeker"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-integration",
+      "target": "skill:gws-best-practices"
+    },
+    {
+      "relation": "USES",
+      "confidence": "INFERRED",
       "source": "skill:automation-and-scheduling",
-      "target": "category:system"
+      "target": "project:salon-website"
     },
     {
       "relation": "COMPLEMENTS",
@@ -412,12 +691,6 @@
       "relation": "USED_BY",
       "confidence": "EXTRACTED",
       "source": "skill:automation-and-scheduling",
-      "target": "connector:airtable"
-    },
-    {
-      "relation": "USED_BY",
-      "confidence": "EXTRACTED",
-      "source": "skill:automation-and-scheduling",
       "target": "connector:notion"
     },
     {
@@ -427,10 +700,10 @@
       "target": "connector:slack"
     },
     {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
+      "relation": "USES",
+      "confidence": "INFERRED",
       "source": "skill:backlink-analysis",
-      "target": "category:seo"
+      "target": "project:salon-website"
     },
     {
       "relation": "COMPLEMENTS",
@@ -457,12 +730,6 @@
       "target": "connector:ahrefs-api"
     },
     {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
-      "source": "skill:builtin-llm-models",
-      "target": "category:system"
-    },
-    {
       "relation": "COMPLEMENTS",
       "confidence": "INFERRED",
       "source": "skill:builtin-llm-models",
@@ -475,10 +742,10 @@
       "target": "connector:openai"
     },
     {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
+      "relation": "USES",
+      "confidence": "INFERRED",
       "source": "skill:content-gap-analysis",
-      "target": "category:seo"
+      "target": "project:salon-website"
     },
     {
       "relation": "COMPLEMENTS",
@@ -499,12 +766,6 @@
       "target": "connector:semrush"
     },
     {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
-      "source": "skill:github-gem-seeker",
-      "target": "category:integration"
-    },
-    {
       "relation": "COMPLEMENTS",
       "confidence": "INFERRED",
       "source": "skill:github-gem-seeker",
@@ -517,22 +778,16 @@
       "target": "connector:github"
     },
     {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
-      "source": "skill:gws-best-practices",
-      "target": "category:integration"
-    },
-    {
       "relation": "USED_BY",
       "confidence": "EXTRACTED",
       "source": "skill:gws-best-practices",
       "target": "connector:google-drive"
     },
     {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
+      "relation": "USES",
+      "confidence": "INFERRED",
       "source": "skill:imagegen",
-      "target": "category:media"
+      "target": "project:salon-website"
     },
     {
       "relation": "COMPLEMENTS",
@@ -541,28 +796,34 @@
       "target": "skill:skill-creator"
     },
     {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
-      "source": "skill:internet-skill-finder",
-      "target": "category:system"
-    },
-    {
       "relation": "COMPLEMENTS",
       "confidence": "INFERRED",
       "source": "skill:internet-skill-finder",
       "target": "skill:skill-creator"
     },
     {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
+      "relation": "USES",
+      "confidence": "INFERRED",
       "source": "skill:keyword-research",
-      "target": "category:seo"
+      "target": "project:salon-website"
     },
     {
       "relation": "COMPLEMENTS",
       "confidence": "INFERRED",
       "source": "skill:keyword-research",
       "target": "skill:website-traffic-checker"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:keyword-research",
+      "target": "skill:salon-website:content-production"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:keyword-research",
+      "target": "skill:salon-website:programmatic-seo"
     },
     {
       "relation": "USED_BY",
@@ -581,12 +842,6 @@
       "confidence": "EXTRACTED",
       "source": "skill:keyword-research",
       "target": "connector:semrush"
-    },
-    {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
-      "source": "skill:manus-api",
-      "target": "category:system"
     },
     {
       "relation": "COMPLEMENTS",
@@ -613,22 +868,10 @@
       "target": "connector:slack"
     },
     {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
-      "source": "skill:manus-config",
-      "target": "category:system"
-    },
-    {
       "relation": "COMPLEMENTS",
       "confidence": "INFERRED",
       "source": "skill:manus-config",
       "target": "skill:persistent-computing"
-    },
-    {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
-      "source": "skill:music-prompter",
-      "target": "category:media"
     },
     {
       "relation": "COMPLEMENTS",
@@ -637,16 +880,10 @@
       "target": "skill:skill-creator"
     },
     {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
-      "source": "skill:persistent-computing",
-      "target": "category:system"
-    },
-    {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
+      "relation": "USES",
+      "confidence": "INFERRED",
       "source": "skill:seo-audit",
-      "target": "category:seo"
+      "target": "project:salon-website"
     },
     {
       "relation": "COMPLEMENTS",
@@ -661,16 +898,22 @@
       "target": "skill:website-traffic-checker"
     },
     {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:seo-audit",
+      "target": "skill:salon-website:content-production"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:seo-audit",
+      "target": "skill:salon-website:schema-markup"
+    },
+    {
       "relation": "USED_BY",
       "confidence": "EXTRACTED",
       "source": "skill:seo-audit",
       "target": "connector:ahrefs"
-    },
-    {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
-      "source": "skill:seo-competitor-analysis",
-      "target": "category:seo"
     },
     {
       "relation": "COMPLEMENTS",
@@ -685,22 +928,10 @@
       "target": "connector:semrush"
     },
     {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
-      "source": "skill:similarweb-analytics",
-      "target": "category:seo"
-    },
-    {
       "relation": "USED_BY",
       "confidence": "EXTRACTED",
       "source": "skill:similarweb-analytics",
       "target": "connector:similarweb"
-    },
-    {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
-      "source": "skill:skill-creator",
-      "target": "category:system"
     },
     {
       "relation": "COMPLEMENTS",
@@ -715,28 +946,16 @@
       "target": "connector:github"
     },
     {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
-      "source": "skill:tts-prompter",
-      "target": "category:media"
-    },
-    {
-      "relation": "BELONGS_TO",
-      "confidence": "EXTRACTED",
+      "relation": "USES",
+      "confidence": "INFERRED",
       "source": "skill:website-traffic-checker",
-      "target": "category:seo"
+      "target": "project:salon-website"
     },
     {
       "relation": "USED_BY",
       "confidence": "EXTRACTED",
       "source": "skill:website-traffic-checker",
       "target": "connector:ahrefs"
-    },
-    {
-      "relation": "USED_BY",
-      "confidence": "EXTRACTED",
-      "source": "skill:website-traffic-checker",
-      "target": "connector:ahrefs-api"
     },
     {
       "relation": "USED_BY",
@@ -751,28 +970,76 @@
       "target": "connector:similarweb"
     },
     {
-      "relation": "CONTAINS",
+      "relation": "USES",
       "confidence": "EXTRACTED",
-      "source": "category:seo",
-      "target": "system:manus-os"
+      "source": "project:salon-website",
+      "target": "skill:salon-website:content-production"
     },
     {
-      "relation": "CONTAINS",
+      "relation": "USES",
       "confidence": "EXTRACTED",
-      "source": "category:system",
-      "target": "system:manus-os"
+      "source": "project:salon-website",
+      "target": "skill:salon-website:pr-review-expert"
     },
     {
-      "relation": "CONTAINS",
+      "relation": "USES",
       "confidence": "EXTRACTED",
-      "source": "category:media",
-      "target": "system:manus-os"
+      "source": "project:salon-website",
+      "target": "skill:salon-website:programmatic-seo"
     },
     {
-      "relation": "CONTAINS",
+      "relation": "USES",
       "confidence": "EXTRACTED",
-      "source": "category:integration",
-      "target": "system:manus-os"
+      "source": "project:salon-website",
+      "target": "skill:salon-website:schema-markup"
+    },
+    {
+      "relation": "USES",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-website",
+      "target": "skill:salon-website:social-content"
+    },
+    {
+      "relation": "USES",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-website",
+      "target": "skill:salon-website:social-media-manager"
+    },
+    {
+      "relation": "DOCUMENTED_BY",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-website",
+      "target": "knowledge:salon-website"
+    },
+    {
+      "relation": "USED_BY",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-website",
+      "target": "connector:cloudflare"
+    },
+    {
+      "relation": "USED_BY",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-website",
+      "target": "connector:wix"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:salon-website:content-production",
+      "target": "skill:salon-website:social-content"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:salon-website:programmatic-seo",
+      "target": "skill:salon-website:schema-markup"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:salon-website:social-content",
+      "target": "skill:salon-website:social-media-manager"
     }
   ]
 }
