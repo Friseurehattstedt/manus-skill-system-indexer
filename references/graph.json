@@ -76,6 +76,20 @@
       "id": "skill:backlink-analysis"
     },
     {
+      "label": "brandkit",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 2600,
+      "file_count": 1,
+      "source_file": "skills/brandkit/SKILL.md",
+      "community": 2,
+      "id": "skill:brandkit"
+    },
+    {
       "label": "builtin-llm-models",
       "type": "skill",
       "layer": "manus",
@@ -118,6 +132,34 @@
       "id": "skill:content-gap-analysis"
     },
     {
+      "label": "emil-design-eng",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 3887,
+      "file_count": 1,
+      "source_file": "skills/emil-design-eng/SKILL.md",
+      "community": 2,
+      "id": "skill:emil-design-eng"
+    },
+    {
+      "label": "extract-design-system",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": true,
+      "word_count": 292,
+      "file_count": 3,
+      "source_file": "skills/extract-design-system/SKILL.md",
+      "community": 2,
+      "id": "skill:extract-design-system"
+    },
+    {
       "label": "github-gem-seeker",
       "type": "skill",
       "layer": "manus",
@@ -144,6 +186,20 @@
       "source_file": "skills/gws-best-practices/SKILL.md",
       "community": 4,
       "id": "skill:gws-best-practices"
+    },
+    {
+      "label": "image-to-code",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 5820,
+      "file_count": 1,
+      "source_file": "skills/image-to-code/SKILL.md",
+      "community": 2,
+      "id": "skill:image-to-code"
     },
     {
       "label": "imagegen",
@@ -242,6 +298,20 @@
       "source_file": "skills/persistent-computing/SKILL.md",
       "community": 2,
       "id": "skill:persistent-computing"
+    },
+    {
+      "label": "review-animations",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 1118,
+      "file_count": 2,
+      "source_file": "skills/review-animations/SKILL.md",
+      "community": 2,
+      "id": "skill:review-animations"
     },
     {
       "label": "seo-audit",
@@ -368,6 +438,90 @@
       "source_file": "skills/tts-prompter/SKILL.md",
       "community": 3,
       "id": "skill:tts-prompter"
+    },
+    {
+      "label": "ui-ux-pro-max",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": true,
+      "has_references": false,
+      "word_count": 6898,
+      "file_count": 36,
+      "source_file": "skills/ui-ux-pro-max/SKILL.md",
+      "community": 2,
+      "id": "skill:ui-ux-pro-max"
+    },
+    {
+      "label": "brand",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": true,
+      "has_references": true,
+      "word_count": 343,
+      "file_count": 18,
+      "source_file": "skills/uiux-brand/SKILL.md",
+      "community": 2,
+      "id": "skill:uiux-brand"
+    },
+    {
+      "label": "design",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": true,
+      "has_references": true,
+      "word_count": 1546,
+      "file_count": 35,
+      "source_file": "skills/uiux-design/SKILL.md",
+      "community": 2,
+      "id": "skill:uiux-design"
+    },
+    {
+      "label": "design-system",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": true,
+      "has_references": true,
+      "word_count": 838,
+      "file_count": 27,
+      "source_file": "skills/uiux-design-system/SKILL.md",
+      "community": 2,
+      "id": "skill:uiux-design-system"
+    },
+    {
+      "label": "ui-styling",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": true,
+      "has_references": true,
+      "word_count": 1149,
+      "file_count": 98,
+      "source_file": "skills/uiux-ui-styling/SKILL.md",
+      "community": 2,
+      "id": "skill:uiux-ui-styling"
+    },
+    {
+      "label": "web-design-guidelines",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 176,
+      "file_count": 1,
+      "source_file": "skills/web-design-guidelines/SKILL.md",
+      "community": 2,
+      "id": "skill:web-design-guidelines"
     },
     {
       "label": "website-traffic-checker",
@@ -512,6 +666,14 @@
       "source_file": "projects/salon-os/skills/web-design-guidelines/SKILL.md",
       "community": 5,
       "id": "skill:salon-os:web-design-guidelines"
+    },
+    {
+      "label": "Wissen: salon-os",
+      "type": "knowledge",
+      "layer": "project",
+      "file_count": 1,
+      "community": 5,
+      "id": "knowledge:salon-os"
     },
     {
       "label": "Ahrefs",
@@ -711,7 +873,31 @@
       "relation": "CONTAINS",
       "confidence": "EXTRACTED",
       "source": "category:manus-system",
+      "target": "skill:brandkit"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
       "target": "skill:builtin-llm-models"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:emil-design-eng"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:extract-design-system"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:image-to-code"
     },
     {
       "relation": "CONTAINS",
@@ -741,6 +927,12 @@
       "relation": "CONTAINS",
       "confidence": "EXTRACTED",
       "source": "category:manus-system",
+      "target": "skill:review-animations"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
       "target": "skill:skill-creator"
     },
     {
@@ -748,6 +940,42 @@
       "confidence": "EXTRACTED",
       "source": "category:manus-system",
       "target": "skill:system-indexer"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:ui-ux-pro-max"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:uiux-brand"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:uiux-design"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:uiux-design-system"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:uiux-ui-styling"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:web-design-guidelines"
     },
     {
       "relation": "CONTAINS",
@@ -870,6 +1098,30 @@
       "target": "connector:ahrefs-api"
     },
     {
+      "relation": "USES",
+      "confidence": "INFERRED",
+      "source": "skill:brandkit",
+      "target": "project:salon-os"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:brandkit",
+      "target": "skill:ui-ux-pro-max"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:brandkit",
+      "target": "skill:uiux-brand"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:brandkit",
+      "target": "skill:image-to-code"
+    },
+    {
       "relation": "COMPLEMENTS",
       "confidence": "INFERRED",
       "source": "skill:builtin-llm-models",
@@ -906,6 +1158,48 @@
       "target": "connector:semrush"
     },
     {
+      "relation": "USES",
+      "confidence": "INFERRED",
+      "source": "skill:emil-design-eng",
+      "target": "project:salon-os"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:emil-design-eng",
+      "target": "skill:review-animations"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:emil-design-eng",
+      "target": "skill:ui-ux-pro-max"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:emil-design-eng",
+      "target": "skill:image-to-code"
+    },
+    {
+      "relation": "USES",
+      "confidence": "INFERRED",
+      "source": "skill:extract-design-system",
+      "target": "project:salon-os"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:extract-design-system",
+      "target": "skill:ui-ux-pro-max"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:extract-design-system",
+      "target": "skill:uiux-design-system"
+    },
+    {
       "relation": "COMPLEMENTS",
       "confidence": "INFERRED",
       "source": "skill:github-gem-seeker",
@@ -922,6 +1216,18 @@
       "confidence": "EXTRACTED",
       "source": "skill:gws-best-practices",
       "target": "connector:google-drive"
+    },
+    {
+      "relation": "USES",
+      "confidence": "INFERRED",
+      "source": "skill:image-to-code",
+      "target": "project:salon-os"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:image-to-code",
+      "target": "skill:ui-ux-pro-max"
     },
     {
       "relation": "USES",
@@ -1008,6 +1314,12 @@
       "target": "skill:skill-creator"
     },
     {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:review-animations",
+      "target": "skill:web-design-guidelines"
+    },
+    {
       "relation": "USES",
       "confidence": "INFERRED",
       "source": "skill:seo-audit",
@@ -1060,6 +1372,72 @@
       "confidence": "EXTRACTED",
       "source": "skill:skill-creator",
       "target": "connector:github"
+    },
+    {
+      "relation": "USES",
+      "confidence": "INFERRED",
+      "source": "skill:ui-ux-pro-max",
+      "target": "project:salon-os"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:ui-ux-pro-max",
+      "target": "skill:uiux-design"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:ui-ux-pro-max",
+      "target": "skill:uiux-design-system"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:ui-ux-pro-max",
+      "target": "skill:uiux-brand"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:ui-ux-pro-max",
+      "target": "skill:uiux-ui-styling"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:ui-ux-pro-max",
+      "target": "skill:web-design-guidelines"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:uiux-brand",
+      "target": "skill:uiux-design-system"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:uiux-design",
+      "target": "skill:uiux-design-system"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:uiux-design-system",
+      "target": "skill:uiux-ui-styling"
+    },
+    {
+      "relation": "COMPLEMENTS",
+      "confidence": "INFERRED",
+      "source": "skill:uiux-ui-styling",
+      "target": "skill:web-design-guidelines"
+    },
+    {
+      "relation": "USES",
+      "confidence": "INFERRED",
+      "source": "skill:web-design-guidelines",
+      "target": "project:salon-os"
     },
     {
       "relation": "USES",
@@ -1150,6 +1528,12 @@
       "confidence": "EXTRACTED",
       "source": "project:salon-os",
       "target": "skill:salon-os:web-design-guidelines"
+    },
+    {
+      "relation": "DOCUMENTED_BY",
+      "confidence": "EXTRACTED",
+      "source": "project:salon-os",
+      "target": "knowledge:salon-os"
     }
   ]
 }

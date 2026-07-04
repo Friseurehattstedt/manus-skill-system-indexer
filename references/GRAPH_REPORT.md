@@ -2,7 +2,7 @@
 
 > **Für jeden KI-Agenten:** Lies zuerst `SYSTEM.md` um den Systemgedanken zu verstehen. Dieser Bericht ist der operative Überblick.
 
-> Generiert: 2026-07-03 16:23 | Knoten: **54** | Kanten: **88** | Manus-Skills: **24** | Projekt-Skills: **11** | Projekte: **1** | Konnektoren: **12**
+> Generiert: 2026-07-04 01:06 | Knoten: **66** | Kanten: **125** | Manus-Skills: **35** | Projekt-Skills: **11** | Projekte: **1** | Konnektoren: **12**
 
 ---
 
@@ -13,7 +13,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | Ebene | Was | Anzahl |
 |---|---|:---:|
 | **Kern** | Manus System Brain (dieses Repo) | 1 |
-| **Universelle Skills** | Plattformübergreifende Fähigkeiten | 24 |
+| **Universelle Skills** | Plattformübergreifende Fähigkeiten | 35 |
 | **Projekte** | Spezifische Anwendungen (z.B. Salon-Website) | 1 |
 | **Projekt-Skills** | Projektspezifische Fähigkeiten | 11 |
 | **Konnektoren** | Externe APIs und Integrationen | 12 (2 aktiv) |
@@ -39,13 +39,24 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | Skill | Beschreibung | Scripts | Wörter |
 |---|---|:---:|---:|
 | **automation-and-scheduling** |  |  | 2,654 |
+| **brand** |  | ✓ | 343 |
+| **brandkit** |  |  | 2,600 |
 | **builtin-llm-models** |  | ✓ | 1,779 |
+| **design** |  | ✓ | 1,546 |
+| **design-system** |  | ✓ | 838 |
+| **emil-design-eng** |  |  | 3,887 |
+| **extract-design-system** |  |  | 292 |
+| **image-to-code** |  |  | 5,820 |
 | **internet-skill-finder** |  | ✓ | 212 |
 | **manus-api** |  |  | 1,257 |
 | **manus-config** |  |  | 1,365 |
 | **persistent-computing** |  |  | 1,262 |
+| **review-animations** |  |  | 1,118 |
 | **skill-creator** |  | ✓ | 1,425 |
 | **system-indexer** |  | ✓ | 552 |
+| **ui-styling** |  | ✓ | 1,149 |
+| **ui-ux-pro-max** |  | ✓ | 6,898 |
+| **web-design-guidelines** |  |  | 176 |
 
 ### Medien & Kreation
 
@@ -84,7 +95,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 - **ui-styling** — 
 - **web-design-guidelines** — 
 
-**Nutzt universelle Skills:** seo-audit, content-gap-analysis, keyword-research, website-traffic-checker, backlink-analysis, imagegen, automation-and-scheduling
+**Nutzt universelle Skills:** seo-audit, content-gap-analysis, keyword-research, website-traffic-checker, backlink-analysis, imagegen, automation-and-scheduling, emil-design-eng, ui-ux-pro-max, web-design-guidelines, extract-design-system, image-to-code, brandkit
 
 ---
 
@@ -92,16 +103,16 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 
 | Rang | Knoten | Typ | Ebene | Verbindungen |
 |:---:|---|---|---|:---:|
-| 1 | **Salon OS — Die Friseure Gumbert & Partner** | project | unternehmens-os | 19 |
-| 2 | **website-traffic-checker** | skill | manus | 10 |
-| 3 | **System & Infrastruktur** | category | manus | 9 |
-| 4 | **SEO & Marketing** | category | manus | 8 |
-| 5 | **automation-and-scheduling** | skill | manus | 7 |
-| 6 | **keyword-research** | skill | manus | 7 |
-| 7 | **manus-api** | skill | manus | 7 |
-| 8 | **Manus System Brain** | system | core | 6 |
-| 9 | **backlink-analysis** | skill | manus | 6 |
-| 10 | **seo-audit** | skill | manus | 6 |
+| 1 | **Salon OS — Die Friseure Gumbert & Partner** | project | unternehmens-os | 26 |
+| 2 | **System & Infrastruktur** | category | manus | 20 |
+| 3 | **ui-ux-pro-max** | skill | manus | 11 |
+| 4 | **website-traffic-checker** | skill | manus | 10 |
+| 5 | **SEO & Marketing** | category | manus | 8 |
+| 6 | **automation-and-scheduling** | skill | manus | 7 |
+| 7 | **keyword-research** | skill | manus | 7 |
+| 8 | **manus-api** | skill | manus | 7 |
+| 9 | **Manus System Brain** | system | core | 6 |
+| 10 | **backlink-analysis** | skill | manus | 6 |
 
 ---
 
