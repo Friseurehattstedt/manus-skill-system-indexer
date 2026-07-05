@@ -2,7 +2,7 @@
 
 > **Für jeden KI-Agenten:** Lies zuerst `SYSTEM.md` um den Systemgedanken zu verstehen. Dieser Bericht ist der operative Überblick.
 
-> Generiert: 2026-07-04 01:06 | Knoten: **66** | Kanten: **125** | Manus-Skills: **35** | Projekt-Skills: **11** | Projekte: **1** | Konnektoren: **12**
+> Generiert: 2026-07-05 01:02 | Knoten: **66** | Kanten: **125** | Manus-Skills: **35** | Projekt-Skills: **11** | Projekte: **1** | Konnektoren: **12**
 
 ---
 
@@ -53,7 +53,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | **persistent-computing** |  |  | 1,262 |
 | **review-animations** |  |  | 1,118 |
 | **skill-creator** |  | ✓ | 1,425 |
-| **system-indexer** |  | ✓ | 552 |
+| **system-indexer** |  | ✓ | 278 |
 | **ui-styling** |  | ✓ | 1,149 |
 | **ui-ux-pro-max** |  | ✓ | 6,898 |
 | **web-design-guidelines** |  |  | 176 |
