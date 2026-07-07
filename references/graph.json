@@ -132,6 +132,48 @@
       "id": "skill:content-gap-analysis"
     },
     {
+      "label": "contract-intake",
+      "type": "skill",
+      "layer": "core",
+      "category": "system",
+      "description": "Vertrag als strukturierte Objekte erfassen.",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 278,
+      "file_count": 1,
+      "source_file": "skills/contract-intake/SKILL.md",
+      "community": 8,
+      "id": "skill:contract-intake"
+    },
+    {
+      "label": "deadline-extraction",
+      "type": "skill",
+      "layer": "core",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 219,
+      "file_count": 1,
+      "source_file": "skills/deadline-extraction/SKILL.md",
+      "community": 8,
+      "id": "skill:deadline-extraction"
+    },
+    {
+      "label": "emergency-card",
+      "type": "skill",
+      "layer": "core",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 252,
+      "file_count": 1,
+      "source_file": "skills/emergency-card/SKILL.md",
+      "community": 8,
+      "id": "skill:emergency-card"
+    },
+    {
       "label": "emil-design-eng",
       "type": "skill",
       "layer": "manus",
@@ -172,6 +214,20 @@
       "source_file": "skills/github-gem-seeker/SKILL.md",
       "community": 4,
       "id": "skill:github-gem-seeker"
+    },
+    {
+      "label": "graph-memory-entry",
+      "type": "skill",
+      "layer": "core",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 218,
+      "file_count": 1,
+      "source_file": "skills/graph-memory-entry/SKILL.md",
+      "community": 8,
+      "id": "skill:graph-memory-entry"
     },
     {
       "label": "gws-best-practices",
@@ -424,6 +480,20 @@
       "source_file": "skills/system-indexer/SKILL.md",
       "community": 2,
       "id": "skill:system-indexer"
+    },
+    {
+      "label": "tool-evaluation",
+      "type": "skill",
+      "layer": "core",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 222,
+      "file_count": 1,
+      "source_file": "skills/tool-evaluation/SKILL.md",
+      "community": 8,
+      "id": "skill:tool-evaluation"
     },
     {
       "label": "tts-prompter",
@@ -782,6 +852,273 @@
       "description": "Search website data, access content, and automate workflows within Wix",
       "community": 6,
       "id": "connector:wix"
+    },
+    {
+      "label": "analytics-kpis",
+      "type": "module",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "module:analytics-kpis"
+    },
+    {
+      "label": "Human Approval First",
+      "type": "policy",
+      "layer": "core",
+      "community": 8,
+      "description": "Produktive Änderungen, neue Zugänge, neue Software, neue MCP-Server, neue Automationen und neue Schreibrechte nur nach menschlicher Freigabe (Susanne/Oliver).",
+      "id": "policy:human-approval-first"
+    },
+    {
+      "label": "No Secrets in Knowledge Systems",
+      "type": "policy",
+      "layer": "core",
+      "community": 8,
+      "description": "Keine Passwörter, API Keys, Tokens, OAuth-Secrets, SSH Keys oder Recovery Codes in GitHub, Datenbanken, Dokumentation, Graph, Chat oder KI-Memory. Nur SecretReference (WO liegt es sicher).",
+      "id": "policy:no-secrets-in-knowledge-systems"
+    },
+    {
+      "label": "Read-only First",
+      "type": "policy",
+      "layer": "core",
+      "community": 8,
+      "description": "Neue Skills, MCP-Server, Agenten und Integrationen starten lesend oder mit Testdaten.",
+      "id": "policy:read-only-first"
+    },
+    {
+      "label": "Documents Contracts Security",
+      "type": "module",
+      "layer": "core",
+      "description": "Dokumente, Verträge, Zugänge (Metadaten), Fristen, Ansprechpartner, Notfälle.",
+      "community": 8,
+      "id": "module:documents-contracts-security"
+    },
+    {
+      "label": "finance-accounting",
+      "type": "module",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "module:finance-accounting"
+    },
+    {
+      "label": "hr-people",
+      "type": "module",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "module:hr-people"
+    },
+    {
+      "label": "it-security",
+      "type": "module",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "module:it-security"
+    },
+    {
+      "label": "marketing",
+      "type": "module",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "module:marketing"
+    },
+    {
+      "label": "quality-processes",
+      "type": "module",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "module:quality-processes"
+    },
+    {
+      "label": "vendors-procurement",
+      "type": "module",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "module:vendors-procurement"
+    },
+    {
+      "label": "website-seo-geo-aeo",
+      "type": "module",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "module:website-seo-geo-aeo"
+    },
+    {
+      "label": "Business OS Kernel",
+      "type": "concept",
+      "layer": "core",
+      "description": "Wiederverwendbarer Kern (10 Primitives) für alle Unternehmensmodule.",
+      "community": 8,
+      "id": "concept:business-os-kernel"
+    },
+    {
+      "label": "Reusable Business Module Pattern",
+      "type": "pattern",
+      "layer": "core",
+      "description": "Jeder Unternehmensbereich wird nach demselben Muster aufgenommen.",
+      "community": 8,
+      "id": "pattern:reusable-business-module"
+    },
+    {
+      "label": "AI Is Replaceable",
+      "type": "policy",
+      "layer": "core",
+      "description": "Die KI ist ein austauschbarer Ausführungsagent. Unternehmenswissen, Skills, Datenmodelle, Policies und Entscheidungen werden außerhalb der KI dauerhaft gespeichert.",
+      "community": 8,
+      "id": "policy:ai-is-replaceable"
+    },
+    {
+      "label": "Reuse First / Open Source First",
+      "type": "policy",
+      "layer": "core",
+      "description": "Vor jeder Neuentwicklung werden eigener Katalog und etablierte internationale Open-Source-Quellen geprüft.",
+      "community": 8,
+      "id": "policy:reuse-first"
+    },
+    {
+      "label": "Standard Agent Runtime Contract",
+      "type": "agentcontract",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "agent-contract:standard-runtime"
+    },
+    {
+      "label": "uptime-kuma",
+      "type": "system",
+      "layer": "core",
+      "description": "Monitoring kritischer Endpunkte (Website, Vault, Buchung).",
+      "community": 8,
+      "id": "system:uptime-kuma"
+    },
+    {
+      "label": "classification-input-classifier",
+      "type": "agent",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "agent:classification-input-classifier"
+    },
+    {
+      "label": "extraction-field-extractor",
+      "type": "agent",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "agent:extraction-field-extractor"
+    },
+    {
+      "label": "approval-gatekeeper-gate",
+      "type": "agent",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "agent:approval-gatekeeper-gate"
+    },
+    {
+      "label": "graph-memory-registrar",
+      "type": "agent",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "agent:graph-memory-registrar"
+    },
+    {
+      "label": "secrets-in-excel",
+      "type": "risk",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "risk:secrets-in-excel"
+    },
+    {
+      "label": "no-2fa-critical-services",
+      "type": "risk",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "risk:no-2fa-critical-services"
+    },
+    {
+      "label": "single-person-secret-access",
+      "type": "risk",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "risk:single-person-secret-access"
+    },
+    {
+      "label": "Hetzner salon-core (CPX32, nbg1)",
+      "type": "system",
+      "layer": "core",
+      "description": "Dienste-Plattform des Business OS.",
+      "community": 8,
+      "id": "system:salon-core"
+    },
+    {
+      "label": "vaultwarden",
+      "type": "system",
+      "layer": "core",
+      "description": "Secret-Ebene Stufe B — Maschinen- und Team-Secrets.",
+      "community": 8,
+      "id": "system:vaultwarden"
+    },
+    {
+      "label": "manus-cloudflare-token-broad",
+      "type": "risk",
+      "layer": "core",
+      "description": "",
+      "community": 8,
+      "id": "risk:manus-cloudflare-token-broad"
+    },
+    {
+      "label": "os-agent-service-account",
+      "type": "agent",
+      "layer": "core",
+      "description": "Maschinenkonto im Vault; Laufzeit-Secret-Bezug für alle Server-Agenten via os-secret.",
+      "community": 8,
+      "id": "agent:os-agent-service-account"
+    },
+    {
+      "label": "ops",
+      "type": "ops",
+      "layer": "core",
+      "community": 8,
+      "id": "ops"
+    },
+    {
+      "label": "os-repo-backup",
+      "type": "job",
+      "layer": "core",
+      "community": 8,
+      "id": "job:os-repo-backup"
+    },
+    {
+      "label": "github-read",
+      "type": "secret",
+      "layer": "core",
+      "community": 8,
+      "id": "secret:github-read"
+    },
+    {
+      "label": "os-machine",
+      "type": "collection",
+      "layer": "core",
+      "community": 8,
+      "id": "collection:os-machine"
+    },
+    {
+      "label": "status.die-friseure-hattstedt.de",
+      "type": "status.die-friseure-hattstedt.de",
+      "layer": "core",
+      "community": 8,
+      "id": "status.die-friseure-hattstedt.de"
     }
   ],
   "links": [
@@ -885,6 +1222,24 @@
       "relation": "CONTAINS",
       "confidence": "EXTRACTED",
       "source": "category:manus-system",
+      "target": "skill:contract-intake"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:deadline-extraction"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:emergency-card"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
       "target": "skill:emil-design-eng"
     },
     {
@@ -892,6 +1247,12 @@
       "confidence": "EXTRACTED",
       "source": "category:manus-system",
       "target": "skill:extract-design-system"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:graph-memory-entry"
     },
     {
       "relation": "CONTAINS",
@@ -940,6 +1301,12 @@
       "confidence": "EXTRACTED",
       "source": "category:manus-system",
       "target": "skill:system-indexer"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:tool-evaluation"
     },
     {
       "relation": "CONTAINS",
@@ -1158,6 +1525,24 @@
       "target": "connector:semrush"
     },
     {
+      "relation": "USES_SKILL",
+      "confidence": "DECLARED",
+      "source": "skill:contract-intake",
+      "target": "module:documents-contracts-security"
+    },
+    {
+      "relation": "USES_SKILL",
+      "confidence": "DECLARED",
+      "source": "skill:deadline-extraction",
+      "target": "module:documents-contracts-security"
+    },
+    {
+      "relation": "USES_SKILL",
+      "confidence": "DECLARED",
+      "source": "skill:emergency-card",
+      "target": "module:it-security"
+    },
+    {
       "relation": "USES",
       "confidence": "INFERRED",
       "source": "skill:emil-design-eng",
@@ -1210,6 +1595,12 @@
       "confidence": "EXTRACTED",
       "source": "skill:github-gem-seeker",
       "target": "connector:github"
+    },
+    {
+      "relation": "USES_SKILL",
+      "confidence": "DECLARED",
+      "source": "skill:graph-memory-entry",
+      "target": "concept:business-os-kernel"
     },
     {
       "relation": "USED_BY",
@@ -1374,6 +1765,12 @@
       "target": "connector:github"
     },
     {
+      "relation": "USES_SKILL",
+      "confidence": "DECLARED",
+      "source": "skill:tool-evaluation",
+      "target": "module:it-security"
+    },
+    {
       "relation": "USES",
       "confidence": "INFERRED",
       "source": "skill:ui-ux-pro-max",
@@ -1534,6 +1931,276 @@
       "confidence": "EXTRACTED",
       "source": "project:salon-os",
       "target": "knowledge:salon-os"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "module:analytics-kpis",
+      "target": "policy:human-approval-first"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "module:analytics-kpis",
+      "target": "policy:no-secrets-in-knowledge-systems"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "module:analytics-kpis",
+      "target": "policy:read-only-first"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:human-approval-first",
+      "target": "module:documents-contracts-security"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:human-approval-first",
+      "target": "module:finance-accounting"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:human-approval-first",
+      "target": "module:hr-people"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:human-approval-first",
+      "target": "module:it-security"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:human-approval-first",
+      "target": "module:marketing"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:human-approval-first",
+      "target": "module:quality-processes"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:human-approval-first",
+      "target": "module:vendors-procurement"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:human-approval-first",
+      "target": "module:website-seo-geo-aeo"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:no-secrets-in-knowledge-systems",
+      "target": "module:documents-contracts-security"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:no-secrets-in-knowledge-systems",
+      "target": "module:finance-accounting"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:no-secrets-in-knowledge-systems",
+      "target": "module:hr-people"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:no-secrets-in-knowledge-systems",
+      "target": "module:it-security"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:no-secrets-in-knowledge-systems",
+      "target": "module:marketing"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:no-secrets-in-knowledge-systems",
+      "target": "module:quality-processes"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:no-secrets-in-knowledge-systems",
+      "target": "module:vendors-procurement"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:no-secrets-in-knowledge-systems",
+      "target": "module:website-seo-geo-aeo"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:read-only-first",
+      "target": "module:documents-contracts-security"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:read-only-first",
+      "target": "module:finance-accounting"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:read-only-first",
+      "target": "module:hr-people"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:read-only-first",
+      "target": "module:it-security"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:read-only-first",
+      "target": "module:marketing"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:read-only-first",
+      "target": "module:quality-processes"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:read-only-first",
+      "target": "module:vendors-procurement"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:read-only-first",
+      "target": "module:website-seo-geo-aeo"
+    },
+    {
+      "relation": "INSTANTIATED_AS",
+      "confidence": "DECLARED",
+      "source": "module:documents-contracts-security",
+      "target": "pattern:reusable-business-module"
+    },
+    {
+      "relation": "COVERS",
+      "confidence": "DECLARED",
+      "source": "module:it-security",
+      "target": "system:salon-core"
+    },
+    {
+      "relation": "DEFINES",
+      "confidence": "DECLARED",
+      "source": "concept:business-os-kernel",
+      "target": "pattern:reusable-business-module"
+    },
+    {
+      "relation": "BOUND_BY",
+      "confidence": "DECLARED",
+      "source": "agent-contract:standard-runtime",
+      "target": "agent:os-agent-service-account"
+    },
+    {
+      "relation": "BOUND_BY",
+      "confidence": "DECLARED",
+      "source": "agent-contract:standard-runtime",
+      "target": "agent:classification-input-classifier"
+    },
+    {
+      "relation": "BOUND_BY",
+      "confidence": "DECLARED",
+      "source": "agent-contract:standard-runtime",
+      "target": "agent:extraction-field-extractor"
+    },
+    {
+      "relation": "BOUND_BY",
+      "confidence": "DECLARED",
+      "source": "agent-contract:standard-runtime",
+      "target": "agent:approval-gatekeeper-gate"
+    },
+    {
+      "relation": "BOUND_BY",
+      "confidence": "DECLARED",
+      "source": "agent-contract:standard-runtime",
+      "target": "agent:graph-memory-registrar"
+    },
+    {
+      "relation": "HOSTED_ON",
+      "confidence": "DECLARED",
+      "source": "system:uptime-kuma",
+      "target": "system:salon-core"
+    },
+    {
+      "relation": "REACHABLE_AT",
+      "confidence": "DECLARED",
+      "source": "system:uptime-kuma",
+      "target": "status.die-friseure-hattstedt.de"
+    },
+    {
+      "relation": "MONITORS",
+      "confidence": "DECLARED",
+      "source": "system:uptime-kuma",
+      "target": "system:vaultwarden"
+    },
+    {
+      "relation": "HOSTED_ON",
+      "confidence": "DECLARED",
+      "source": "system:salon-core",
+      "target": "system:vaultwarden"
+    },
+    {
+      "relation": "ACCESS_DOCUMENTED_IN",
+      "confidence": "DECLARED",
+      "source": "system:salon-core",
+      "target": "ops"
+    },
+    {
+      "relation": "RUNS",
+      "confidence": "DECLARED",
+      "source": "system:salon-core",
+      "target": "job:os-repo-backup"
+    },
+    {
+      "relation": "READS",
+      "confidence": "DECLARED",
+      "source": "system:vaultwarden",
+      "target": "agent:os-agent-service-account"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "DECLARED",
+      "source": "system:vaultwarden",
+      "target": "collection:os-machine"
+    },
+    {
+      "relation": "READS_COLLECTION",
+      "confidence": "DECLARED",
+      "source": "agent:os-agent-service-account",
+      "target": "collection:os-machine"
+    },
+    {
+      "relation": "USES_SECRET",
+      "confidence": "DECLARED",
+      "source": "job:os-repo-backup",
+      "target": "secret:github-read"
     }
   ]
 }

@@ -2,7 +2,7 @@
 
 > **Für jeden KI-Agenten:** Lies zuerst `SYSTEM.md` um den Systemgedanken zu verstehen. Dieser Bericht ist der operative Überblick.
 
-> Generiert: 2026-07-06 01:04 | Knoten: **66** | Kanten: **125** | Manus-Skills: **35** | Projekt-Skills: **11** | Projekte: **1** | Konnektoren: **12**
+> Generiert: 2026-07-07 01:07 | Knoten: **105** | Kanten: **180** | Manus-Skills: **35** | Projekt-Skills: **11** | Projekte: **1** | Konnektoren: **12**
 
 ---
 
@@ -104,15 +104,15 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | Rang | Knoten | Typ | Ebene | Verbindungen |
 |:---:|---|---|---|:---:|
 | 1 | **Salon OS — Die Friseure Gumbert & Partner** | project | unternehmens-os | 26 |
-| 2 | **System & Infrastruktur** | category | manus | 20 |
+| 2 | **System & Infrastruktur** | category | manus | 25 |
 | 3 | **ui-ux-pro-max** | skill | manus | 11 |
 | 4 | **website-traffic-checker** | skill | manus | 10 |
-| 5 | **SEO & Marketing** | category | manus | 8 |
-| 6 | **automation-and-scheduling** | skill | manus | 7 |
-| 7 | **keyword-research** | skill | manus | 7 |
-| 8 | **manus-api** | skill | manus | 7 |
-| 9 | **Manus System Brain** | system | core | 6 |
-| 10 | **backlink-analysis** | skill | manus | 6 |
+| 5 | **Human Approval First** | policy | core | 9 |
+| 6 | **No Secrets in Knowledge Systems** | policy | core | 9 |
+| 7 | **Read-only First** | policy | core | 9 |
+| 8 | **SEO & Marketing** | category | manus | 8 |
+| 9 | **automation-and-scheduling** | skill | manus | 7 |
+| 10 | **keyword-research** | skill | manus | 7 |
 
 ---
 

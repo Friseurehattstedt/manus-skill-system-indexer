@@ -150,6 +150,73 @@ def parse_skill_frontmatter(skill_md_path: Path) -> dict:
     }
 
 
+
+# ── Business-OS-Ebene: Module, Policies, Decisions, Systeme, Agenten ─────────
+def add_business_layer(G):
+    """Liest die Business-OS-Knoten aus /graph und /modules ein (modell-unabhaengig,
+    reine Markdown-Quellen). Ergaenzt den technischen Skill-Graphen um die
+    Unternehmens-Ebene. Fehlt ein Ordner, wird er uebersprungen (portabel)."""
+    import re
+    added = 0
+    # 1) Module aus /modules/*/module.md
+    modules_dir = REPO_ROOT / "modules"
+    if modules_dir.exists():
+        for md in sorted(modules_dir.glob("*/module.md")):
+            name = md.parent.name
+            nid = f"module:{name}"
+            first = ""
+            for line in md.read_text(encoding="utf-8").splitlines():
+                if line.strip() and not line.startswith("#") and not line.startswith(">"):
+                    first = line.strip().lstrip("-* ")[:160]; break
+            G.add_node(nid, label=name, type="module", layer="company",
+                       description=first, community=7)
+            added += 1
+            for pol in ("policy:human-approval-first","policy:no-secrets-in-knowledge-systems","policy:read-only-first"):
+                G.add_node(pol, label=pol.split(":")[1], type="policy", layer="core", community=8)
+                G.add_edge(nid, pol, relation="GOVERNED_BY", confidence="DECLARED")
+    # 2) NODE-Bloecke aus /graph/nodes.md und /graph/memory-payload.md
+    for gf in ("graph/nodes.md","graph/memory-payload.md"):
+        f = REPO_ROOT / gf
+        if not f.exists():
+            continue
+        cur = {}
+        def flush(cur):
+            nonlocal added
+            nid = cur.get("ID") or (cur.get("_type","node").lower()+":"+cur.get("NAME","").lower().replace(" ","-")) if cur.get("NAME") else cur.get("ID")
+            if cur.get("ID"):
+                t = cur.get("_type","concept").lower()
+                G.add_node(cur["ID"], label=cur.get("NAME", cur["ID"].split(":")[-1]),
+                           type=t, layer=cur.get("_layer","core"),
+                           description=(cur.get("PURPOSE") or cur.get("RULE") or "")[:200], community=8)
+                added += 1
+        for raw in f.read_text(encoding="utf-8").splitlines():
+            line = raw.strip()
+            m = re.match(r"^NODE:\s*(\w+)", line)
+            if m:
+                flush(cur); cur = {"_type": m.group(1)}
+                continue
+            m = re.match(r"^([A-Z_]+):\s*(.*)$", line)
+            if m and cur is not None:
+                cur[m.group(1)] = m.group(2)
+        flush(cur)
+    # 3) Kanten aus RELATIONSHIP-SET-Bloecken (- a --rel--> b)
+    for gf in ("graph/memory-payload.md","graph/relationships.md"):
+        f = REPO_ROOT / gf
+        if not f.exists():
+            continue
+        for raw in f.read_text(encoding="utf-8").splitlines():
+            m = re.match(r"^-\s*([\w:.-]+)\s*--(\w+)-->\s*([\w:.*-]+)", raw.strip())
+            if m:
+                a,rel,b = m.groups()
+                if "*" in a or "*" in b or "ALL" in b:
+                    continue
+                if not G.has_node(a): G.add_node(a, label=a.split(":")[-1], type=a.split(":")[0], layer="core", community=8)
+                if not G.has_node(b): G.add_node(b, label=b.split(":")[-1], type=b.split(":")[0], layer="core", community=8)
+                G.add_edge(a,b, relation=rel.upper(), confidence="DECLARED")
+    print(f"  + {added} Business-Knoten (Module/Policies/Decisions/Systeme)")
+    return G
+
+
 def build_graph() -> nx.Graph:
     G = nx.Graph()
     all_skill_nodes = {}  # skill_dir_name → node_id
@@ -271,15 +338,30 @@ def build_graph() -> nx.Graph:
                 G.add_edge(src_node, dep_node, relation="COMPLEMENTS", confidence="INFERRED")
 
     # ── EBENE 5: Konnektoren ───────────────────────────────────────────────
+    # Quelle der Wahrheit: knowledge-graph/connectors.json (Git-versioniert, läuft überall).
+    # Manus-Config (falls vorhanden) aktualisiert nur den enabled-Status / neue Einträge.
     print("\n[build] Konnektoren...")
     connectors_loaded = 0
+    connectors_by_name = {}
+    repo_conn_file = OUTPUT_DIR / "connectors.json"
+    if repo_conn_file.exists():
+        with open(repo_conn_file, encoding="utf-8") as f:
+            for c in json.load(f).get("connectors", []):
+                connectors_by_name[c["name"]] = c
     if CONFIG_FILE.exists():
         with open(CONFIG_FILE) as f:
             config = json.load(f)
         important = set(CONNECTOR_SKILL_MAP.keys())
         for c in config.get("connectors", []):
+            if c.get("enabled") or c.get("name","") in important:
+                connectors_by_name[c.get("name","")] = {
+                    "name": c.get("name",""), "enabled": c.get("enabled", False),
+                    "brief": c.get("brief","")}
+    if not connectors_by_name:
+        print("  ! Warnung: weder connectors.json noch Manus-Config gefunden — 0 Konnektoren")
+    for c in connectors_by_name.values():
             name = c.get("name", "")
-            if not c.get("enabled") and name not in important:
+            if not name:
                 continue
             node_id = f"connector:{name.lower().replace(' ', '-')}"
             G.add_node(node_id, label=name, type="connector", layer="connector",
@@ -294,6 +376,8 @@ def build_graph() -> nx.Graph:
                             G.add_edge(node_id, target, relation="USED_BY", confidence="EXTRACTED")
     print(f"  + {connectors_loaded} Konnektoren")
 
+    print("\n[build] Business-OS-Ebene...")
+    add_business_layer(G)
     print(f"\n[build] Fertig: {G.number_of_nodes()} Knoten, {G.number_of_edges()} Kanten")
     return G
 
