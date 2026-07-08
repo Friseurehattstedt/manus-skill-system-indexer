@@ -328,6 +328,20 @@
       "id": "skill:manus-config"
     },
     {
+      "label": "manus-pptx",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 3247,
+      "file_count": 2,
+      "source_file": "skills/manus-pptx/SKILL.md",
+      "community": 2,
+      "id": "skill:manus-pptx"
+    },
+    {
       "label": "music-prompter",
       "type": "skill",
       "layer": "manus",
@@ -746,6 +760,15 @@
       "id": "knowledge:salon-os"
     },
     {
+      "label": "sprachlern-app",
+      "type": "project",
+      "layer": "core",
+      "description": "Birkenbihl-Sprachlern-App. Getrennte Infrastruktur/Repo.",
+      "repo": "",
+      "community": 8,
+      "id": "project:sprachlern-app"
+    },
+    {
       "label": "Ahrefs",
       "type": "connector",
       "layer": "connector",
@@ -902,6 +925,14 @@
       "id": "module:finance-accounting"
     },
     {
+      "label": "hr-arbeitszeit",
+      "type": "module",
+      "layer": "core",
+      "description": "Arbeitszeit-/Urlaubs-/Krankheitsauswertung aus Phorest, Monatsberichte + Steuerberater-Export (datenminimiert).",
+      "community": 8,
+      "id": "module:hr-arbeitszeit"
+    },
+    {
       "label": "hr-people",
       "type": "module",
       "layer": "core",
@@ -940,6 +971,14 @@
       "description": "",
       "community": 8,
       "id": "module:vendors-procurement"
+    },
+    {
+      "label": "warenwirtschaft-webapp",
+      "type": "module",
+      "layer": "company",
+      "description": "| Baustein | Rolle |",
+      "community": 7,
+      "id": "module:warenwirtschaft-webapp"
     },
     {
       "label": "website-seo-geo-aeo",
@@ -1086,6 +1125,54 @@
       "id": "agent:os-agent-service-account"
     },
     {
+      "label": "os-update-check",
+      "type": "job",
+      "layer": "core",
+      "description": "Wöchentliche Meldung verfügbarer Container-Updates (installiert nichts).",
+      "community": 8,
+      "id": "job:os-update-check"
+    },
+    {
+      "label": "phorest",
+      "type": "system",
+      "layer": "core",
+      "description": "Salon-Software (Buchung, Kasse, Kunden, Produkte) — API-Quelle für Analytics + Warenwirtschaft.",
+      "community": 8,
+      "id": "system:phorest"
+    },
+    {
+      "label": "os-phorest-wrapper",
+      "type": "job",
+      "layer": "core",
+      "description": "read-only Phorest-API-Zugriff, Credentials zur Laufzeit aus Vault.",
+      "community": 8,
+      "id": "job:os-phorest-wrapper"
+    },
+    {
+      "label": "health-data-art9-payroll",
+      "type": "risk",
+      "layer": "core",
+      "description": "Krankheitsdaten sind Gesundheitsdaten (DSGVO Art. 9); Fehlbehandlung = hohes Bußgeld-/Vertrauensrisiko.",
+      "community": 8,
+      "id": "risk:health-data-art9-payroll"
+    },
+    {
+      "label": "os-api-watch",
+      "type": "job",
+      "layer": "core",
+      "description": "API-Registry + Changelog-Wächter — cachet OpenAPI-Specs, meldet Änderungen (API-Agent-Muster).",
+      "community": 8,
+      "id": "job:os-api-watch"
+    },
+    {
+      "label": "warenwirtschaft-webapp",
+      "type": "project",
+      "layer": "core",
+      "description": "Cloudflare-Webapp als Prozesszentrale (Wareneingang, Bestände, Anbieter, Arbeitszeit, Freigabe).",
+      "community": 8,
+      "id": "project:warenwirtschaft-webapp"
+    },
+    {
       "label": "ops",
       "type": "ops",
       "layer": "core",
@@ -1119,6 +1206,34 @@
       "layer": "core",
       "community": 8,
       "id": "status.die-friseure-hattstedt.de"
+    },
+    {
+      "label": "email",
+      "type": "email",
+      "layer": "core",
+      "community": 8,
+      "id": "email"
+    },
+    {
+      "label": "phorest-api",
+      "type": "secret",
+      "layer": "core",
+      "community": 8,
+      "id": "secret:phorest-api"
+    },
+    {
+      "label": "website",
+      "type": "system",
+      "layer": "core",
+      "community": 8,
+      "id": "system:website"
+    },
+    {
+      "label": "scout",
+      "type": "concept",
+      "layer": "core",
+      "community": 8,
+      "id": "concept:scout"
     }
   ],
   "links": [
@@ -1157,6 +1272,18 @@
       "confidence": "EXTRACTED",
       "source": "system:brain",
       "target": "project:salon-os"
+    },
+    {
+      "relation": "COORDINATES",
+      "confidence": "EXTRACTED",
+      "source": "system:brain",
+      "target": "project:sprachlern-app"
+    },
+    {
+      "relation": "SATELLITE_OF",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "project:warenwirtschaft-webapp"
     },
     {
       "relation": "CONTAINS",
@@ -1277,6 +1404,12 @@
       "confidence": "EXTRACTED",
       "source": "category:manus-system",
       "target": "skill:manus-config"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:manus-pptx"
     },
     {
       "relation": "CONTAINS",
@@ -1933,6 +2066,12 @@
       "target": "knowledge:salon-os"
     },
     {
+      "relation": "SEPARATE_FROM",
+      "confidence": "DECLARED",
+      "source": "project:sprachlern-app",
+      "target": "project:warenwirtschaft-webapp"
+    },
+    {
       "relation": "GOVERNED_BY",
       "confidence": "DECLARED",
       "source": "module:analytics-kpis",
@@ -1951,6 +2090,12 @@
       "target": "policy:read-only-first"
     },
     {
+      "relation": "USES",
+      "confidence": "DECLARED",
+      "source": "module:analytics-kpis",
+      "target": "system:phorest"
+    },
+    {
       "relation": "GOVERNED_BY",
       "confidence": "DECLARED",
       "source": "policy:human-approval-first",
@@ -1961,6 +2106,12 @@
       "confidence": "DECLARED",
       "source": "policy:human-approval-first",
       "target": "module:finance-accounting"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:human-approval-first",
+      "target": "module:hr-arbeitszeit"
     },
     {
       "relation": "GOVERNED_BY",
@@ -1991,6 +2142,12 @@
       "confidence": "DECLARED",
       "source": "policy:human-approval-first",
       "target": "module:vendors-procurement"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:human-approval-first",
+      "target": "module:warenwirtschaft-webapp"
     },
     {
       "relation": "GOVERNED_BY",
@@ -2014,6 +2171,12 @@
       "relation": "GOVERNED_BY",
       "confidence": "DECLARED",
       "source": "policy:no-secrets-in-knowledge-systems",
+      "target": "module:hr-arbeitszeit"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:no-secrets-in-knowledge-systems",
       "target": "module:hr-people"
     },
     {
@@ -2039,6 +2202,12 @@
       "confidence": "DECLARED",
       "source": "policy:no-secrets-in-knowledge-systems",
       "target": "module:vendors-procurement"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:no-secrets-in-knowledge-systems",
+      "target": "module:warenwirtschaft-webapp"
     },
     {
       "relation": "GOVERNED_BY",
@@ -2062,6 +2231,12 @@
       "relation": "GOVERNED_BY",
       "confidence": "DECLARED",
       "source": "policy:read-only-first",
+      "target": "module:hr-arbeitszeit"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:read-only-first",
       "target": "module:hr-people"
     },
     {
@@ -2087,6 +2262,12 @@
       "confidence": "DECLARED",
       "source": "policy:read-only-first",
       "target": "module:vendors-procurement"
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "confidence": "DECLARED",
+      "source": "policy:read-only-first",
+      "target": "module:warenwirtschaft-webapp"
     },
     {
       "relation": "GOVERNED_BY",
@@ -2101,10 +2282,46 @@
       "target": "pattern:reusable-business-module"
     },
     {
+      "relation": "USES",
+      "confidence": "DECLARED",
+      "source": "module:hr-arbeitszeit",
+      "target": "system:phorest"
+    },
+    {
+      "relation": "REFINES",
+      "confidence": "DECLARED",
+      "source": "module:hr-arbeitszeit",
+      "target": "module:hr-people"
+    },
+    {
+      "relation": "INTEGRATES",
+      "confidence": "DECLARED",
+      "source": "module:hr-arbeitszeit",
+      "target": "project:warenwirtschaft-webapp"
+    },
+    {
       "relation": "COVERS",
       "confidence": "DECLARED",
       "source": "module:it-security",
       "target": "system:salon-core"
+    },
+    {
+      "relation": "PUBLISHES",
+      "confidence": "DECLARED",
+      "source": "module:marketing",
+      "target": "system:website"
+    },
+    {
+      "relation": "USES",
+      "confidence": "DECLARED",
+      "source": "module:vendors-procurement",
+      "target": "system:phorest"
+    },
+    {
+      "relation": "INTEGRATES",
+      "confidence": "DECLARED",
+      "source": "module:vendors-procurement",
+      "target": "project:warenwirtschaft-webapp"
     },
     {
       "relation": "DEFINES",
@@ -2143,7 +2360,7 @@
       "target": "agent:graph-memory-registrar"
     },
     {
-      "relation": "HOSTED_ON",
+      "relation": "MONITORS",
       "confidence": "DECLARED",
       "source": "system:uptime-kuma",
       "target": "system:salon-core"
@@ -2159,6 +2376,12 @@
       "confidence": "DECLARED",
       "source": "system:uptime-kuma",
       "target": "system:vaultwarden"
+    },
+    {
+      "relation": "ALERTS_VIA",
+      "confidence": "DECLARED",
+      "source": "system:uptime-kuma",
+      "target": "email"
     },
     {
       "relation": "HOSTED_ON",
@@ -2195,6 +2418,42 @@
       "confidence": "DECLARED",
       "source": "agent:os-agent-service-account",
       "target": "collection:os-machine"
+    },
+    {
+      "relation": "AUTH_VIA",
+      "confidence": "DECLARED",
+      "source": "system:phorest",
+      "target": "secret:phorest-api"
+    },
+    {
+      "relation": "USES",
+      "confidence": "DECLARED",
+      "source": "system:phorest",
+      "target": "system:website"
+    },
+    {
+      "relation": "WATCHES",
+      "confidence": "DECLARED",
+      "source": "system:phorest",
+      "target": "job:os-api-watch"
+    },
+    {
+      "relation": "USES",
+      "confidence": "DECLARED",
+      "source": "system:phorest",
+      "target": "project:warenwirtschaft-webapp"
+    },
+    {
+      "relation": "USES_SECRET",
+      "confidence": "DECLARED",
+      "source": "job:os-phorest-wrapper",
+      "target": "secret:phorest-api"
+    },
+    {
+      "relation": "IMPLEMENTS",
+      "confidence": "DECLARED",
+      "source": "job:os-api-watch",
+      "target": "concept:scout"
     },
     {
       "relation": "USES_SECRET",

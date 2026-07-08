@@ -2,7 +2,7 @@
 
 > **Für jeden KI-Agenten:** Lies zuerst `SYSTEM.md` um den Systemgedanken zu verstehen. Dieser Bericht ist der operative Überblick.
 
-> Generiert: 2026-07-07 01:07 | Knoten: **105** | Kanten: **180** | Manus-Skills: **35** | Projekt-Skills: **11** | Projekte: **1** | Konnektoren: **12**
+> Generiert: 2026-07-08 01:03 | Knoten: **119** | Kanten: **204** | Manus-Skills: **36** | Projekt-Skills: **11** | Projekte: **3** | Konnektoren: **12**
 
 ---
 
@@ -13,8 +13,8 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | Ebene | Was | Anzahl |
 |---|---|:---:|
 | **Kern** | Manus System Brain (dieses Repo) | 1 |
-| **Universelle Skills** | Plattformübergreifende Fähigkeiten | 35 |
-| **Projekte** | Spezifische Anwendungen (z.B. Salon-Website) | 1 |
+| **Universelle Skills** | Plattformübergreifende Fähigkeiten | 36 |
+| **Projekte** | Spezifische Anwendungen (z.B. Salon-Website) | 3 |
 | **Projekt-Skills** | Projektspezifische Fähigkeiten | 11 |
 | **Konnektoren** | Externe APIs und Integrationen | 12 (2 aktiv) |
 
@@ -50,6 +50,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | **internet-skill-finder** |  | ✓ | 212 |
 | **manus-api** |  |  | 1,257 |
 | **manus-config** |  |  | 1,365 |
+| **manus-pptx** |  |  | 3,247 |
 | **persistent-computing** |  |  | 1,262 |
 | **review-animations** |  |  | 1,118 |
 | **skill-creator** |  | ✓ | 1,425 |
@@ -97,22 +98,30 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 
 **Nutzt universelle Skills:** seo-audit, content-gap-analysis, keyword-research, website-traffic-checker, backlink-analysis, imagegen, automation-and-scheduling, emil-design-eng, ui-ux-pro-max, web-design-guidelines, extract-design-system, image-to-code, brandkit
 
+### sprachlern-app
+
+**Repo:** `` | **Beschreibung:** Birkenbihl-Sprachlern-App. Getrennte Infrastruktur/Repo.
+
+### warenwirtschaft-webapp
+
+**Repo:** `—` | **Beschreibung:** Cloudflare-Webapp als Prozesszentrale (Wareneingang, Bestände, Anbieter, Arbeitszeit, Freigabe).
+
 ---
 
 ## Zentrale Knoten (höchste Vernetzung)
 
 | Rang | Knoten | Typ | Ebene | Verbindungen |
 |:---:|---|---|---|:---:|
-| 1 | **Salon OS — Die Friseure Gumbert & Partner** | project | unternehmens-os | 26 |
-| 2 | **System & Infrastruktur** | category | manus | 25 |
+| 1 | **System & Infrastruktur** | category | manus | 26 |
+| 2 | **Salon OS — Die Friseure Gumbert & Partner** | project | unternehmens-os | 26 |
 | 3 | **ui-ux-pro-max** | skill | manus | 11 |
-| 4 | **website-traffic-checker** | skill | manus | 10 |
-| 5 | **Human Approval First** | policy | core | 9 |
-| 6 | **No Secrets in Knowledge Systems** | policy | core | 9 |
-| 7 | **Read-only First** | policy | core | 9 |
-| 8 | **SEO & Marketing** | category | manus | 8 |
-| 9 | **automation-and-scheduling** | skill | manus | 7 |
-| 10 | **keyword-research** | skill | manus | 7 |
+| 4 | **Human Approval First** | policy | core | 11 |
+| 5 | **No Secrets in Knowledge Systems** | policy | core | 11 |
+| 6 | **Read-only First** | policy | core | 11 |
+| 7 | **website-traffic-checker** | skill | manus | 10 |
+| 8 | **Manus System Brain** | system | core | 8 |
+| 9 | **SEO & Marketing** | category | manus | 8 |
+| 10 | **automation-and-scheduling** | skill | manus | 7 |
 
 ---
 
