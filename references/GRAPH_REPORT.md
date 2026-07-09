@@ -2,7 +2,7 @@
 
 > **Für jeden KI-Agenten:** Lies zuerst `SYSTEM.md` um den Systemgedanken zu verstehen. Dieser Bericht ist der operative Überblick.
 
-> Generiert: 2026-07-08 01:03 | Knoten: **119** | Kanten: **204** | Manus-Skills: **36** | Projekt-Skills: **11** | Projekte: **3** | Konnektoren: **12**
+> Generiert: 2026-07-09 01:02 | Knoten: **119** | Kanten: **204** | Manus-Skills: **36** | Projekt-Skills: **11** | Projekte: **3** | Konnektoren: **12**
 
 ---
 
