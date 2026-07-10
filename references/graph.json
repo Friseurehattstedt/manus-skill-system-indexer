@@ -335,7 +335,7 @@
       "description": "",
       "has_scripts": false,
       "has_references": false,
-      "word_count": 3247,
+      "word_count": 3396,
       "file_count": 2,
       "source_file": "skills/manus-pptx/SKILL.md",
       "community": 2,
@@ -606,6 +606,202 @@
       "source_file": "skills/web-design-guidelines/SKILL.md",
       "community": 2,
       "id": "skill:web-design-guidelines"
+    },
+    {
+      "label": "webdev-custom-dockerfile",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 1768,
+      "file_count": 1,
+      "source_file": "skills/webdev-custom-dockerfile/SKILL.md",
+      "community": 2,
+      "id": "skill:webdev-custom-dockerfile"
+    },
+    {
+      "label": "webdev-data-api",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 64,
+      "file_count": 1,
+      "source_file": "skills/webdev-data-api/SKILL.md",
+      "community": 2,
+      "id": "skill:webdev-data-api"
+    },
+    {
+      "label": "webdev-file-storage",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 235,
+      "file_count": 1,
+      "source_file": "skills/webdev-file-storage/SKILL.md",
+      "community": 2,
+      "id": "skill:webdev-file-storage"
+    },
+    {
+      "label": "webdev-image-generation",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 227,
+      "file_count": 1,
+      "source_file": "skills/webdev-image-generation/SKILL.md",
+      "community": 2,
+      "id": "skill:webdev-image-generation"
+    },
+    {
+      "label": "webdev-llm-integration",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 697,
+      "file_count": 1,
+      "source_file": "skills/webdev-llm-integration/SKILL.md",
+      "community": 2,
+      "id": "skill:webdev-llm-integration"
+    },
+    {
+      "label": "webdev-manus-oauth",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 908,
+      "file_count": 1,
+      "source_file": "skills/webdev-manus-oauth/SKILL.md",
+      "community": 2,
+      "id": "skill:webdev-manus-oauth"
+    },
+    {
+      "label": "webdev-maps-integration",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 159,
+      "file_count": 1,
+      "source_file": "skills/webdev-maps-integration/SKILL.md",
+      "community": 2,
+      "id": "skill:webdev-maps-integration"
+    },
+    {
+      "label": "webdev-owner-notifications",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 129,
+      "file_count": 1,
+      "source_file": "skills/webdev-owner-notifications/SKILL.md",
+      "community": 2,
+      "id": "skill:webdev-owner-notifications"
+    },
+    {
+      "label": "webdev-periodic-updates",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 2121,
+      "file_count": 1,
+      "source_file": "skills/webdev-periodic-updates/SKILL.md",
+      "community": 2,
+      "id": "skill:webdev-periodic-updates"
+    },
+    {
+      "label": "webdev-readme-fullstack",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 4362,
+      "file_count": 1,
+      "source_file": "skills/webdev-readme-fullstack/SKILL.md",
+      "community": 2,
+      "id": "skill:webdev-readme-fullstack"
+    },
+    {
+      "label": "webdev-readme-mobile",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 3419,
+      "file_count": 1,
+      "source_file": "skills/webdev-readme-mobile/SKILL.md",
+      "community": 2,
+      "id": "skill:webdev-readme-mobile"
+    },
+    {
+      "label": "webdev-readme-mobile-backend",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 4951,
+      "file_count": 1,
+      "source_file": "skills/webdev-readme-mobile-backend/SKILL.md",
+      "community": 2,
+      "id": "skill:webdev-readme-mobile-backend"
+    },
+    {
+      "label": "webdev-readme-static",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 3211,
+      "file_count": 1,
+      "source_file": "skills/webdev-readme-static/SKILL.md",
+      "community": 2,
+      "id": "skill:webdev-readme-static"
+    },
+    {
+      "label": "webdev-voice-transcription",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": false,
+      "has_references": false,
+      "word_count": 150,
+      "file_count": 1,
+      "source_file": "skills/webdev-voice-transcription/SKILL.md",
+      "community": 2,
+      "id": "skill:webdev-voice-transcription"
     },
     {
       "label": "website-traffic-checker",
@@ -1476,6 +1672,90 @@
       "confidence": "EXTRACTED",
       "source": "category:manus-system",
       "target": "skill:web-design-guidelines"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:webdev-custom-dockerfile"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:webdev-data-api"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:webdev-file-storage"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:webdev-image-generation"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:webdev-llm-integration"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:webdev-manus-oauth"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:webdev-maps-integration"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:webdev-owner-notifications"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:webdev-periodic-updates"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:webdev-readme-fullstack"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:webdev-readme-mobile"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:webdev-readme-mobile-backend"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:webdev-readme-static"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:webdev-voice-transcription"
     },
     {
       "relation": "CONTAINS",

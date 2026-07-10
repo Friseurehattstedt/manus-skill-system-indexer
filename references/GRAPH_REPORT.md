@@ -2,7 +2,7 @@
 
 > **Für jeden KI-Agenten:** Lies zuerst `SYSTEM.md` um den Systemgedanken zu verstehen. Dieser Bericht ist der operative Überblick.
 
-> Generiert: 2026-07-09 01:02 | Knoten: **119** | Kanten: **204** | Manus-Skills: **36** | Projekt-Skills: **11** | Projekte: **3** | Konnektoren: **12**
+> Generiert: 2026-07-10 01:01 | Knoten: **133** | Kanten: **218** | Manus-Skills: **50** | Projekt-Skills: **11** | Projekte: **3** | Konnektoren: **12**
 
 ---
 
@@ -13,7 +13,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | Ebene | Was | Anzahl |
 |---|---|:---:|
 | **Kern** | Manus System Brain (dieses Repo) | 1 |
-| **Universelle Skills** | Plattformübergreifende Fähigkeiten | 36 |
+| **Universelle Skills** | Plattformübergreifende Fähigkeiten | 50 |
 | **Projekte** | Spezifische Anwendungen (z.B. Salon-Website) | 3 |
 | **Projekt-Skills** | Projektspezifische Fähigkeiten | 11 |
 | **Konnektoren** | Externe APIs und Integrationen | 12 (2 aktiv) |
@@ -50,7 +50,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | **internet-skill-finder** |  | ✓ | 212 |
 | **manus-api** |  |  | 1,257 |
 | **manus-config** |  |  | 1,365 |
-| **manus-pptx** |  |  | 3,247 |
+| **manus-pptx** |  |  | 3,396 |
 | **persistent-computing** |  |  | 1,262 |
 | **review-animations** |  |  | 1,118 |
 | **skill-creator** |  | ✓ | 1,425 |
@@ -58,6 +58,20 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | **ui-styling** |  | ✓ | 1,149 |
 | **ui-ux-pro-max** |  | ✓ | 6,898 |
 | **web-design-guidelines** |  |  | 176 |
+| **webdev-custom-dockerfile** |  |  | 1,768 |
+| **webdev-data-api** |  |  | 64 |
+| **webdev-file-storage** |  |  | 235 |
+| **webdev-image-generation** |  |  | 227 |
+| **webdev-llm-integration** |  |  | 697 |
+| **webdev-manus-oauth** |  |  | 908 |
+| **webdev-maps-integration** |  |  | 159 |
+| **webdev-owner-notifications** |  |  | 129 |
+| **webdev-periodic-updates** |  |  | 2,121 |
+| **webdev-readme-fullstack** |  |  | 4,362 |
+| **webdev-readme-mobile** |  |  | 3,419 |
+| **webdev-readme-mobile-backend** |  |  | 4,951 |
+| **webdev-readme-static** |  |  | 3,211 |
+| **webdev-voice-transcription** |  |  | 150 |
 
 ### Medien & Kreation
 
@@ -112,7 +126,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 
 | Rang | Knoten | Typ | Ebene | Verbindungen |
 |:---:|---|---|---|:---:|
-| 1 | **System & Infrastruktur** | category | manus | 26 |
+| 1 | **System & Infrastruktur** | category | manus | 40 |
 | 2 | **Salon OS — Die Friseure Gumbert & Partner** | project | unternehmens-os | 26 |
 | 3 | **ui-ux-pro-max** | skill | manus | 11 |
 | 4 | **Human Approval First** | policy | core | 11 |
