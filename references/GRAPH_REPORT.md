@@ -2,7 +2,7 @@
 
 > **Für jeden KI-Agenten:** Lies zuerst `SYSTEM.md` um den Systemgedanken zu verstehen. Dieser Bericht ist der operative Überblick.
 
-> Generiert: 2026-07-10 01:01 | Knoten: **133** | Kanten: **218** | Manus-Skills: **50** | Projekt-Skills: **11** | Projekte: **3** | Konnektoren: **12**
+> Generiert: 2026-07-11 01:03 | Knoten: **135** | Kanten: **220** | Manus-Skills: **52** | Projekt-Skills: **11** | Projekte: **3** | Konnektoren: **12**
 
 ---
 
@@ -13,7 +13,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | Ebene | Was | Anzahl |
 |---|---|:---:|
 | **Kern** | Manus System Brain (dieses Repo) | 1 |
-| **Universelle Skills** | Plattformübergreifende Fähigkeiten | 50 |
+| **Universelle Skills** | Plattformübergreifende Fähigkeiten | 52 |
 | **Projekte** | Spezifische Anwendungen (z.B. Salon-Website) | 3 |
 | **Projekt-Skills** | Projektspezifische Fähigkeiten | 11 |
 | **Konnektoren** | Externe APIs und Integrationen | 12 (2 aktiv) |
@@ -46,15 +46,17 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | **design-system** |  | ✓ | 838 |
 | **emil-design-eng** |  |  | 3,887 |
 | **extract-design-system** |  |  | 292 |
+| **game-dev** |  | ✓ | 803 |
 | **image-to-code** |  |  | 5,820 |
 | **internet-skill-finder** |  | ✓ | 212 |
 | **manus-api** |  |  | 1,257 |
-| **manus-config** |  |  | 1,365 |
+| **manus-config** |  |  | 1,411 |
 | **manus-pptx** |  |  | 3,396 |
 | **persistent-computing** |  |  | 1,262 |
 | **review-animations** |  |  | 1,118 |
 | **skill-creator** |  | ✓ | 1,425 |
 | **system-indexer** |  | ✓ | 278 |
+| **typst-pdf-maker** |  | ✓ | 835 |
 | **ui-styling** |  | ✓ | 1,149 |
 | **ui-ux-pro-max** |  | ✓ | 6,898 |
 | **web-design-guidelines** |  |  | 176 |
@@ -126,7 +128,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 
 | Rang | Knoten | Typ | Ebene | Verbindungen |
 |:---:|---|---|---|:---:|
-| 1 | **System & Infrastruktur** | category | manus | 40 |
+| 1 | **System & Infrastruktur** | category | manus | 42 |
 | 2 | **Salon OS — Die Friseure Gumbert & Partner** | project | unternehmens-os | 26 |
 | 3 | **ui-ux-pro-max** | skill | manus | 11 |
 | 4 | **Human Approval First** | policy | core | 11 |

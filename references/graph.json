@@ -202,6 +202,20 @@
       "id": "skill:extract-design-system"
     },
     {
+      "label": "game-dev",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": true,
+      "has_references": true,
+      "word_count": 803,
+      "file_count": 17,
+      "source_file": "skills/game-dev/SKILL.md",
+      "community": 2,
+      "id": "skill:game-dev"
+    },
+    {
       "label": "github-gem-seeker",
       "type": "skill",
       "layer": "manus",
@@ -321,7 +335,7 @@
       "description": "",
       "has_scripts": false,
       "has_references": false,
-      "word_count": 1365,
+      "word_count": 1411,
       "file_count": 1,
       "source_file": "skills/manus-config/SKILL.md",
       "community": 2,
@@ -522,6 +536,20 @@
       "source_file": "skills/tts-prompter/SKILL.md",
       "community": 3,
       "id": "skill:tts-prompter"
+    },
+    {
+      "label": "typst-pdf-maker",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": true,
+      "has_references": true,
+      "word_count": 835,
+      "file_count": 5,
+      "source_file": "skills/typst-pdf-maker/SKILL.md",
+      "community": 2,
+      "id": "skill:typst-pdf-maker"
     },
     {
       "label": "ui-ux-pro-max",
@@ -1575,6 +1603,12 @@
       "relation": "CONTAINS",
       "confidence": "EXTRACTED",
       "source": "category:manus-system",
+      "target": "skill:game-dev"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
       "target": "skill:graph-memory-entry"
     },
     {
@@ -1636,6 +1670,12 @@
       "confidence": "EXTRACTED",
       "source": "category:manus-system",
       "target": "skill:tool-evaluation"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:typst-pdf-maker"
     },
     {
       "relation": "CONTAINS",
