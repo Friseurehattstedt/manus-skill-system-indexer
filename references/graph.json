@@ -384,6 +384,20 @@
       "id": "skill:persistent-computing"
     },
     {
+      "label": "read-special-images",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": true,
+      "has_references": false,
+      "word_count": 594,
+      "file_count": 3,
+      "source_file": "skills/read-special-images/SKILL.md",
+      "community": 2,
+      "id": "skill:read-special-images"
+    },
+    {
       "label": "review-animations",
       "type": "skill",
       "layer": "manus",
@@ -818,6 +832,20 @@
       "id": "skill:webdev-readme-static"
     },
     {
+      "label": "webdev-ssr-conversion",
+      "type": "skill",
+      "layer": "manus",
+      "category": "system",
+      "description": "",
+      "has_scripts": true,
+      "has_references": true,
+      "word_count": 3786,
+      "file_count": 4,
+      "source_file": "skills/webdev-ssr-conversion/SKILL.md",
+      "community": 2,
+      "id": "skill:webdev-ssr-conversion"
+    },
+    {
       "label": "webdev-voice-transcription",
       "type": "skill",
       "layer": "manus",
@@ -1237,6 +1265,14 @@
       "id": "policy:ai-is-replaceable"
     },
     {
+      "label": "No Hidden Memory Dependency",
+      "type": "policy",
+      "layer": "core",
+      "description": "Kritisches Wissen und Betriebsartefakte liegen versioniert im Repo der richtigen Ebene, nie ausschließlich in lokalem KI-/Session-Speicher. Lokale Ablagen sind Cache oder (bei Personendaten) dokumenti",
+      "community": 8,
+      "id": "policy:no-hidden-memory-dependency"
+    },
+    {
       "label": "Reuse First / Open Source First",
       "type": "policy",
       "layer": "core",
@@ -1651,6 +1687,12 @@
       "relation": "CONTAINS",
       "confidence": "EXTRACTED",
       "source": "category:manus-system",
+      "target": "skill:read-special-images"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
       "target": "skill:review-animations"
     },
     {
@@ -1790,6 +1832,12 @@
       "confidence": "EXTRACTED",
       "source": "category:manus-system",
       "target": "skill:webdev-readme-static"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "source": "category:manus-system",
+      "target": "skill:webdev-ssr-conversion"
     },
     {
       "relation": "CONTAINS",

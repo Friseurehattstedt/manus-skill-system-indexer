@@ -2,7 +2,7 @@
 
 > **Für jeden KI-Agenten:** Lies zuerst `SYSTEM.md` um den Systemgedanken zu verstehen. Dieser Bericht ist der operative Überblick.
 
-> Generiert: 2026-07-13 01:04 | Knoten: **135** | Kanten: **220** | Manus-Skills: **52** | Projekt-Skills: **11** | Projekte: **3** | Konnektoren: **12**
+> Generiert: 2026-07-14 01:03 | Knoten: **138** | Kanten: **222** | Manus-Skills: **54** | Projekt-Skills: **11** | Projekte: **3** | Konnektoren: **12**
 
 ---
 
@@ -13,7 +13,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | Ebene | Was | Anzahl |
 |---|---|:---:|
 | **Kern** | Manus System Brain (dieses Repo) | 1 |
-| **Universelle Skills** | Plattformübergreifende Fähigkeiten | 52 |
+| **Universelle Skills** | Plattformübergreifende Fähigkeiten | 54 |
 | **Projekte** | Spezifische Anwendungen (z.B. Salon-Website) | 3 |
 | **Projekt-Skills** | Projektspezifische Fähigkeiten | 11 |
 | **Konnektoren** | Externe APIs und Integrationen | 12 (2 aktiv) |
@@ -53,6 +53,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | **manus-config** |  |  | 1,411 |
 | **manus-pptx** |  |  | 3,396 |
 | **persistent-computing** |  |  | 1,262 |
+| **read-special-images** |  | ✓ | 594 |
 | **review-animations** |  |  | 1,118 |
 | **skill-creator** |  | ✓ | 1,425 |
 | **system-indexer** |  | ✓ | 278 |
@@ -73,6 +74,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 | **webdev-readme-mobile** |  |  | 3,419 |
 | **webdev-readme-mobile-backend** |  |  | 4,951 |
 | **webdev-readme-static** |  |  | 3,211 |
+| **webdev-ssr-conversion** |  | ✓ | 3,786 |
 | **webdev-voice-transcription** |  |  | 150 |
 
 ### Medien & Kreation
@@ -128,7 +130,7 @@ Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:
 
 | Rang | Knoten | Typ | Ebene | Verbindungen |
 |:---:|---|---|---|:---:|
-| 1 | **System & Infrastruktur** | category | manus | 42 |
+| 1 | **System & Infrastruktur** | category | manus | 44 |
 | 2 | **Salon OS — Die Friseure Gumbert & Partner** | project | unternehmens-os | 26 |
 | 3 | **ui-ux-pro-max** | skill | manus | 11 |
 | 4 | **Human Approval First** | policy | core | 11 |
