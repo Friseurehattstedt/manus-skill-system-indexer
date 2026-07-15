@@ -217,6 +217,51 @@ def add_business_layer(G):
     return G
 
 
+# ── Capability Registry v0.1: validieren + in den Graph übernehmen ─────────
+def add_registry_layer(G):
+    """Liest registry/capabilities.yaml (Capability Registry v0.1), validiert sie
+    (registry/validate.py) und überträgt org_ebene/tech_rolle/status in den Graphen.
+    Existierende Knoten (skill:x, policy:x, ...) werden angereichert, fehlende angelegt.
+    Portabel: fehlt Registry oder PyYAML, wird sauber übersprungen."""
+    reg_file = REPO_ROOT / "registry" / "capabilities.yaml"
+    if not reg_file.exists():
+        return G
+    import subprocess
+    r = subprocess.run([sys.executable, str(REPO_ROOT/"registry"/"validate.py")],
+                       capture_output=True, text=True)
+    print(r.stdout.strip())
+    if r.returncode == 2:
+        print("!! REGISTRY NICHT VALIDIERT (Abhängigkeit fehlt) !! Graph wird OHNE Registry-Anreicherung gebaut — Bericht enthält KEINE Registry-Daten. Auto-Sync/CI: PyYAML installieren!")
+        return G
+    if r.returncode != 0:
+        print("!! REGISTRY UNGÜLTIG !! Graph wird ohne Registry-Anreicherung gebaut (Fehler oben beheben).")
+        return G
+    try:
+        import yaml
+    except ImportError:
+        print("[registry] PyYAML fehlt — Anreicherung übersprungen"); return G
+    data = yaml.safe_load(reg_file.read_text(encoding="utf-8"))
+    ang, neu_k = 0, 0
+    for e in data.get("eintraege") or []:
+        nid = e["technische_id"]; z = e.get("zuordnung") or {}
+        attrs = dict(org_ebene=z.get("ebene","plattform"), org_unternehmung=z.get("unternehmung","-"),
+                     tech_rolle=e.get("tech_rolle",""), registry_status=e.get("status",""),
+                     registry_version=str(e.get("version","")), kanonischer_ort=e.get("kanonischer_ort",""))
+        if G.has_node(nid):
+            G.nodes[nid].update(attrs); ang += 1
+        else:
+            G.add_node(nid, label=e.get("anzeigename", nid.split(":")[-1]),
+                       type=e.get("art","capability"), layer="core", community=8, **attrs)
+            neu_k += 1
+        # Guard: nx.Graph überschreibt Attribute existierender Kanten — bestehende
+        # Relationen (CONTAINS/COORDINATES/...) nie durch REGISTERS ersetzen.
+        # Registry-Zugehörigkeit steckt ohnehin in den Knotenattributen (registry_status).
+        if not G.has_edge("system:brain", nid):
+            G.add_edge("system:brain", nid, relation="REGISTERS", confidence="DECLARED")
+    print(f"[registry] {ang} Knoten angereichert, {neu_k} neu angelegt (org_ebene/tech_rolle gesetzt)")
+    return G
+
+
 def build_graph() -> nx.Graph:
     G = nx.Graph()
     all_skill_nodes = {}  # skill_dir_name → node_id
@@ -378,6 +423,7 @@ def build_graph() -> nx.Graph:
 
     print("\n[build] Business-OS-Ebene...")
     add_business_layer(G)
+    add_registry_layer(G)
     print(f"\n[build] Fertig: {G.number_of_nodes()} Knoten, {G.number_of_edges()} Kanten")
     return G
 
@@ -411,7 +457,7 @@ def write_graph_report(G: nx.Graph, path: Path):
         "",
         "## Systemarchitektur",
         "",
-        "Das System besteht aus drei Ebenen, die alle im Graphen verbunden sind:",
+        "Vier-Ebenen-Architektur (siehe SYSTEM.md + docs/architecture/vier-ebenen-architektur.md); im Graphen verbunden:",
         "",
         "| Ebene | Was | Anzahl |",
         "|---|---|:---:|",
@@ -423,6 +469,20 @@ def write_graph_report(G: nx.Graph, path: Path):
         "",
         "---",
         "",
+        # ── Capability Registry (v0.1) ────────────────────────────────
+        *(lambda regs: [
+            "## Fähigkeiten (Capability Registry v0.1)",
+            "",
+            f"{len(regs)} registrierte Fähigkeiten — Quelle: `registry/capabilities.yaml` (validiert im Build).",
+            "",
+            "| Fähigkeit | Art | Status | Techn. Rolle | Prüfstand |",
+            "|---|---|---|---|---|",
+            *[f"| **{d.get('label',n)}** (`{n}`) | {d.get('type','')} | {d.get('registry_status','')} | {d.get('tech_rolle','')} | {d.get('golden_ergebnis','—')} |"
+              for n,d in regs],
+            "",
+            "---",
+            "",
+        ])(sorted([(n,d) for n,d in G.nodes(data=True) if d.get("registry_status")], key=lambda x:(x[1].get("type",""),x[0]))),
         "## Universelle Manus-Skills",
         "",
     ]

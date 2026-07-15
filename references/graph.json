@@ -143,6 +143,12 @@
       "file_count": 1,
       "source_file": "skills/contract-intake/SKILL.md",
       "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "draft",
+      "registry_version": "1.0",
+      "kanonischer_ort": "skills/contract-intake/SKILL.md",
       "id": "skill:contract-intake"
     },
     {
@@ -157,6 +163,12 @@
       "file_count": 1,
       "source_file": "skills/deadline-extraction/SKILL.md",
       "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "draft",
+      "registry_version": "1.1",
+      "kanonischer_ort": "skills/deadline-extraction/SKILL.md",
       "id": "skill:deadline-extraction"
     },
     {
@@ -171,6 +183,12 @@
       "file_count": 1,
       "source_file": "skills/emergency-card/SKILL.md",
       "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "draft",
+      "registry_version": "1.0",
+      "kanonischer_ort": "skills/emergency-card/SKILL.md",
       "id": "skill:emergency-card"
     },
     {
@@ -241,6 +259,12 @@
       "file_count": 1,
       "source_file": "skills/graph-memory-entry/SKILL.md",
       "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "draft",
+      "registry_version": "1.0",
+      "kanonischer_ort": "skills/graph-memory-entry/SKILL.md",
       "id": "skill:graph-memory-entry"
     },
     {
@@ -535,6 +559,12 @@
       "file_count": 1,
       "source_file": "skills/tool-evaluation/SKILL.md",
       "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "draft",
+      "registry_version": "1.0",
+      "kanonischer_ort": "skills/tool-evaluation/SKILL.md",
       "id": "skill:tool-evaluation"
     },
     {
@@ -1142,6 +1172,12 @@
       "layer": "core",
       "community": 8,
       "description": "Produktive Änderungen, neue Zugänge, neue Software, neue MCP-Server, neue Automationen und neue Schreibrechte nur nach menschlicher Freigabe (Susanne/Oliver).",
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "graph/nodes.md",
       "id": "policy:human-approval-first"
     },
     {
@@ -1150,6 +1186,12 @@
       "layer": "core",
       "community": 8,
       "description": "Keine Passwörter, API Keys, Tokens, OAuth-Secrets, SSH Keys oder Recovery Codes in GitHub, Datenbanken, Dokumentation, Graph, Chat oder KI-Memory. Nur SecretReference (WO liegt es sicher).",
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "graph/nodes.md",
       "id": "policy:no-secrets-in-knowledge-systems"
     },
     {
@@ -1158,6 +1200,12 @@
       "layer": "core",
       "community": 8,
       "description": "Neue Skills, MCP-Server, Agenten und Integrationen starten lesend oder mit Testdaten.",
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "graph/nodes.md",
       "id": "policy:read-only-first"
     },
     {
@@ -1262,6 +1310,12 @@
       "layer": "core",
       "description": "Die KI ist ein austauschbarer Ausführungsagent. Unternehmenswissen, Skills, Datenmodelle, Policies und Entscheidungen werden außerhalb der KI dauerhaft gespeichert.",
       "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "graph/nodes.md",
       "id": "policy:ai-is-replaceable"
     },
     {
@@ -1270,6 +1324,12 @@
       "layer": "core",
       "description": "Kritisches Wissen und Betriebsartefakte liegen versioniert im Repo der richtigen Ebene, nie ausschließlich in lokalem KI-/Session-Speicher. Lokale Ablagen sind Cache oder (bei Personendaten) dokumenti",
       "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "graph/nodes.md",
       "id": "policy:no-hidden-memory-dependency"
     },
     {
@@ -1278,6 +1338,12 @@
       "layer": "core",
       "description": "Vor jeder Neuentwicklung werden eigener Katalog und etablierte internationale Open-Source-Quellen geprüft.",
       "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "graph/nodes.md",
       "id": "policy:reuse-first"
     },
     {
@@ -1294,6 +1360,12 @@
       "layer": "core",
       "description": "Monitoring kritischer Endpunkte (Website, Vault, Buchung).",
       "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "monitoring",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "docs/tool-evaluations/uptime-kuma.md",
       "id": "system:uptime-kuma"
     },
     {
@@ -1358,6 +1430,12 @@
       "layer": "core",
       "description": "Dienste-Plattform des Business OS.",
       "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "infrastruktur",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "docs/runbooks/hetzner-server-setup.md",
       "id": "system:salon-core"
     },
     {
@@ -1366,6 +1444,12 @@
       "layer": "core",
       "description": "Secret-Ebene Stufe B — Maschinen- und Team-Secrets.",
       "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "secret-verwaltung",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "docs/tool-evaluations/vaultwarden.md",
       "id": "system:vaultwarden"
     },
     {
@@ -1494,6 +1578,240 @@
       "layer": "core",
       "community": 8,
       "id": "concept:scout"
+    },
+    {
+      "label": "Eingangs-Agent",
+      "type": "agent",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "draft",
+      "registry_version": "1",
+      "kanonischer_ort": "agents/intake/agent.md",
+      "id": "agent:intake"
+    },
+    {
+      "label": "Klassifikations-Agent",
+      "type": "agent",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "draft",
+      "registry_version": "1",
+      "kanonischer_ort": "agents/classification/agent.md",
+      "id": "agent:classification"
+    },
+    {
+      "label": "Extraktions-Agent",
+      "type": "agent",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "draft",
+      "registry_version": "1",
+      "kanonischer_ort": "agents/extraction/agent.md",
+      "id": "agent:extraction"
+    },
+    {
+      "label": "Freigabe-Wächter",
+      "type": "agent",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "draft",
+      "registry_version": "1",
+      "kanonischer_ort": "agents/approval-gatekeeper/agent.md",
+      "id": "agent:approval-gatekeeper"
+    },
+    {
+      "label": "Graph-Gedächtnis-Agent",
+      "type": "agent",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "draft",
+      "registry_version": "1",
+      "kanonischer_ort": "agents/graph-memory/agent.md",
+      "id": "agent:graph-memory"
+    },
+    {
+      "label": "Golden Task 1: Vertrag klassifizieren",
+      "type": "golden-task",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "docs/agents/golden-tasks.md",
+      "id": "golden-task:1"
+    },
+    {
+      "label": "Golden Task 2: Kündigungsfrist extrahieren",
+      "type": "golden-task",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "docs/agents/golden-tasks.md",
+      "id": "golden-task:2"
+    },
+    {
+      "label": "Golden Task 3: Tool bewerten",
+      "type": "golden-task",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "docs/agents/golden-tasks.md",
+      "id": "golden-task:3"
+    },
+    {
+      "label": "Golden Task 4: Notfallkarte erstellen",
+      "type": "golden-task",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "docs/agents/golden-tasks.md",
+      "id": "golden-task:4"
+    },
+    {
+      "label": "Golden Task 5: Website-Verbesserung vorschlagen",
+      "type": "golden-task",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "docs/agents/golden-tasks.md",
+      "id": "golden-task:5"
+    },
+    {
+      "label": "Golden Task 6: Marketingidee strukturieren",
+      "type": "golden-task",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "docs/agents/golden-tasks.md",
+      "id": "golden-task:6"
+    },
+    {
+      "label": "Golden Task 7: MCP-Server bewerten",
+      "type": "golden-task",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "docs/agents/golden-tasks.md",
+      "id": "golden-task:7"
+    },
+    {
+      "label": "Golden Task 8: Secret-Leak-Risiko erkennen",
+      "type": "golden-task",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "docs/agents/golden-tasks.md",
+      "id": "golden-task:8"
+    },
+    {
+      "label": "Golden Task 9: Graph-Nodes aus Dokument erzeugen",
+      "type": "golden-task",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "docs/agents/golden-tasks.md",
+      "id": "golden-task:9"
+    },
+    {
+      "label": "Golden Task 10: Neues Modul nach Template planen",
+      "type": "golden-task",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "intelligenz",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "docs/agents/golden-tasks.md",
+      "id": "golden-task:10"
+    },
+    {
+      "label": "API-Wächter (os-api-watch)",
+      "type": "arbeitsablauf",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "adapter",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "docs/integrations/api-registry.md",
+      "id": "arbeitsablauf:os-api-watch"
+    },
+    {
+      "label": "Neuen API-Token anlegen",
+      "type": "setup-blueprint",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "secret-verwaltung",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "setup-blueprints/token-anlegen.md",
+      "id": "setup-blueprint:token-anlegen"
+    },
+    {
+      "label": "Gehärteten Server aufsetzen",
+      "type": "setup-blueprint",
+      "layer": "core",
+      "community": 8,
+      "org_ebene": "plattform",
+      "org_unternehmung": "-",
+      "tech_rolle": "infrastruktur",
+      "registry_status": "active",
+      "registry_version": "1",
+      "kanonischer_ort": "setup-blueprints/hetzner-server.md",
+      "id": "setup-blueprint:hetzner-server"
     }
   ],
   "links": [
@@ -1544,6 +1862,198 @@
       "confidence": "DECLARED",
       "source": "system:brain",
       "target": "project:warenwirtschaft-webapp"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "skill:contract-intake"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "skill:deadline-extraction"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "skill:graph-memory-entry"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "skill:emergency-card"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "skill:tool-evaluation"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "agent:intake"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "agent:classification"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "agent:extraction"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "agent:approval-gatekeeper"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "agent:graph-memory"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "golden-task:1"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "golden-task:2"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "golden-task:3"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "golden-task:4"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "golden-task:5"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "golden-task:6"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "golden-task:7"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "golden-task:8"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "golden-task:9"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "golden-task:10"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "policy:ai-is-replaceable"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "policy:no-secrets-in-knowledge-systems"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "policy:human-approval-first"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "policy:read-only-first"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "policy:reuse-first"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "policy:no-hidden-memory-dependency"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "system:salon-core"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "system:vaultwarden"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "system:uptime-kuma"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "arbeitsablauf:os-api-watch"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "setup-blueprint:token-anlegen"
+    },
+    {
+      "relation": "REGISTERS",
+      "confidence": "DECLARED",
+      "source": "system:brain",
+      "target": "setup-blueprint:hetzner-server"
     },
     {
       "relation": "CONTAINS",
