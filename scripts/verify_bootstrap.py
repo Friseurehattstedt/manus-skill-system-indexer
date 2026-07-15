@@ -14,6 +14,7 @@ FORBIDDEN_PATHS = {
     "scripts/build_graph.py",
 }
 REQUIRED_PATHS = {
+    ".gitattributes",
     "README.md",
     "SKILL.md",
     "references/BOOTSTRAP_CONTRACT.md",
@@ -36,6 +37,11 @@ def main() -> int:
         errors.append(f"forbidden private projection: {path}")
     for path in sorted(REQUIRED_PATHS - present):
         errors.append(f"required bootstrap file missing: {path}")
+
+    attributes = (ROOT / ".gitattributes").read_text(encoding="utf-8") if (ROOT / ".gitattributes").exists() else ""
+    for path in sorted(FORBIDDEN_PATHS):
+        if f"{path} -diff" not in attributes:
+            errors.append(f"public diff guard missing for {path}")
 
     for relative in sorted(present):
         if relative.startswith(".git/") or relative == "scripts/verify_bootstrap.py":
@@ -60,4 +66,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
-
