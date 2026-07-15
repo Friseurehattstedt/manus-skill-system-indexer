@@ -1,0 +1,4 @@
+# Never render removed private projections in public diffs.
+references/graph.json -diff
+references/GRAPH_REPORT.md -diff
+scripts/build_graph.py -diff
